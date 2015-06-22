@@ -28,16 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.VisualizationBox = new System.Windows.Forms.GroupBox();
             this.StatusGBox = new System.Windows.Forms.GroupBox();
+            this.MoneyLabelSet = new System.Windows.Forms.Label();
+            this.MoneyLabel = new System.Windows.Forms.Label();
+            this.StatusLabelSet = new System.Windows.Forms.Label();
+            this.StatusLabel = new System.Windows.Forms.Label();
             this.DevicesBox = new System.Windows.Forms.GroupBox();
             this.WhatToDoBox = new System.Windows.Forms.GroupBox();
-            this.StatusLabel = new System.Windows.Forms.Label();
-            this.StatusLabelSet = new System.Windows.Forms.Label();
-            this.MoneyLabel = new System.Windows.Forms.Label();
-            this.MoneyLabelSet = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -50,7 +54,7 @@
             // 
             this.VisualizationBox.Location = new System.Drawing.Point(456, 12);
             this.VisualizationBox.Name = "VisualizationBox";
-            this.VisualizationBox.Size = new System.Drawing.Size(166, 390);
+            this.VisualizationBox.Size = new System.Drawing.Size(166, 370);
             this.VisualizationBox.TabIndex = 0;
             this.VisualizationBox.TabStop = false;
             this.VisualizationBox.Text = "groupBox1";
@@ -68,6 +72,42 @@
             this.StatusGBox.TabStop = false;
             this.StatusGBox.Text = "Status";
             // 
+            // MoneyLabelSet
+            // 
+            this.MoneyLabelSet.AutoSize = true;
+            this.MoneyLabelSet.Location = new System.Drawing.Point(54, 34);
+            this.MoneyLabelSet.Name = "MoneyLabelSet";
+            this.MoneyLabelSet.Size = new System.Drawing.Size(13, 13);
+            this.MoneyLabelSet.TabIndex = 4;
+            this.MoneyLabelSet.Text = "0";
+            // 
+            // MoneyLabel
+            // 
+            this.MoneyLabel.AutoSize = true;
+            this.MoneyLabel.Location = new System.Drawing.Point(6, 34);
+            this.MoneyLabel.Name = "MoneyLabel";
+            this.MoneyLabel.Size = new System.Drawing.Size(42, 13);
+            this.MoneyLabel.TabIndex = 3;
+            this.MoneyLabel.Text = "Money:";
+            // 
+            // StatusLabelSet
+            // 
+            this.StatusLabelSet.AutoSize = true;
+            this.StatusLabelSet.Location = new System.Drawing.Point(80, 16);
+            this.StatusLabelSet.Name = "StatusLabelSet";
+            this.StatusLabelSet.Size = new System.Drawing.Size(35, 13);
+            this.StatusLabelSet.TabIndex = 2;
+            this.StatusLabelSet.Text = "NULL";
+            // 
+            // StatusLabel
+            // 
+            this.StatusLabel.AutoSize = true;
+            this.StatusLabel.Location = new System.Drawing.Point(6, 16);
+            this.StatusLabel.Name = "StatusLabel";
+            this.StatusLabel.Size = new System.Drawing.Size(68, 13);
+            this.StatusLabel.TabIndex = 0;
+            this.StatusLabel.Text = "Your Status: ";
+            // 
             // DevicesBox
             // 
             this.DevicesBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -80,52 +120,29 @@
             // 
             // WhatToDoBox
             // 
+            this.WhatToDoBox.Controls.Add(this.panel9);
+            this.WhatToDoBox.Controls.Add(this.panel7);
+            this.WhatToDoBox.Controls.Add(this.panel8);
             this.WhatToDoBox.Controls.Add(this.panel6);
             this.WhatToDoBox.Controls.Add(this.panel5);
             this.WhatToDoBox.Controls.Add(this.panel4);
             this.WhatToDoBox.Controls.Add(this.panel3);
             this.WhatToDoBox.Location = new System.Drawing.Point(206, 12);
             this.WhatToDoBox.Name = "WhatToDoBox";
-            this.WhatToDoBox.Size = new System.Drawing.Size(235, 139);
+            this.WhatToDoBox.Size = new System.Drawing.Size(227, 125);
             this.WhatToDoBox.TabIndex = 0;
             this.WhatToDoBox.TabStop = false;
             this.WhatToDoBox.Text = "What to do ?";
             // 
-            // StatusLabel
+            // panel9
             // 
-            this.StatusLabel.AutoSize = true;
-            this.StatusLabel.Location = new System.Drawing.Point(6, 16);
-            this.StatusLabel.Name = "StatusLabel";
-            this.StatusLabel.Size = new System.Drawing.Size(68, 13);
-            this.StatusLabel.TabIndex = 0;
-            this.StatusLabel.Text = "Your Status: ";
-            // 
-            // StatusLabelSet
-            // 
-            this.StatusLabelSet.AutoSize = true;
-            this.StatusLabelSet.Location = new System.Drawing.Point(80, 16);
-            this.StatusLabelSet.Name = "StatusLabelSet";
-            this.StatusLabelSet.Size = new System.Drawing.Size(35, 13);
-            this.StatusLabelSet.TabIndex = 2;
-            this.StatusLabelSet.Text = "NULL";
-            // 
-            // MoneyLabel
-            // 
-            this.MoneyLabel.AutoSize = true;
-            this.MoneyLabel.Location = new System.Drawing.Point(6, 34);
-            this.MoneyLabel.Name = "MoneyLabel";
-            this.MoneyLabel.Size = new System.Drawing.Size(42, 13);
-            this.MoneyLabel.TabIndex = 3;
-            this.MoneyLabel.Text = "Money:";
-            // 
-            // MoneyLabelSet
-            // 
-            this.MoneyLabelSet.AutoSize = true;
-            this.MoneyLabelSet.Location = new System.Drawing.Point(54, 34);
-            this.MoneyLabelSet.Name = "MoneyLabelSet";
-            this.MoneyLabelSet.Size = new System.Drawing.Size(13, 13);
-            this.MoneyLabelSet.TabIndex = 4;
-            this.MoneyLabelSet.Text = "0";
+            this.panel9.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.shop;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel9.Location = new System.Drawing.Point(115, 71);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(53, 50);
+            this.panel9.TabIndex = 0;
             // 
             // panel2
             // 
@@ -139,32 +156,52 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.icon_background2;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(278, 357);
+            this.panel1.Location = new System.Drawing.Point(277, 343);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(72, 69);
             this.panel1.TabIndex = 1;
             // 
+            // panel7
+            // 
+            this.panel7.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.Safari2;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel7.Location = new System.Drawing.Point(59, 71);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(53, 48);
+            this.panel7.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.freelancer_com;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Location = new System.Drawing.Point(7, 72);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(53, 50);
+            this.panel8.TabIndex = 0;
+            // 
             // panel6
             // 
-            this.panel6.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.freelancer_com;
+            this.panel6.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.sada;
             this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel6.Location = new System.Drawing.Point(172, 16);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(49, 50);
+            this.panel6.Size = new System.Drawing.Size(53, 50);
             this.panel6.TabIndex = 5;
             // 
             // panel5
             // 
-            this.panel5.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1434997029_41_itunes;
+            this.panel5.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.icon_2_119;
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel5.Location = new System.Drawing.Point(115, 16);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(51, 50);
+            this.panel5.Size = new System.Drawing.Size(53, 50);
             this.panel5.TabIndex = 2;
             // 
             // panel4
@@ -174,17 +211,17 @@
             this.panel4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel4.Location = new System.Drawing.Point(59, 16);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(50, 50);
+            this.panel4.Size = new System.Drawing.Size(53, 50);
             this.panel4.TabIndex = 0;
             // 
             // panel3
             // 
-            this.panel3.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.icon_2_119;
+            this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.panel3.Location = new System.Drawing.Point(7, 16);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(46, 50);
+            this.panel3.Size = new System.Drawing.Size(53, 50);
             this.panel3.TabIndex = 0;
             // 
             // MainForm
@@ -192,13 +229,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(634, 424);
+            this.ClientSize = new System.Drawing.Size(634, 413);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.WhatToDoBox);
             this.Controls.Add(this.DevicesBox);
             this.Controls.Add(this.StatusGBox);
             this.Controls.Add(this.VisualizationBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Opacity = 0.98D;
             this.Text = "IOS developer simulator";
@@ -225,6 +263,9 @@
         private System.Windows.Forms.Label MoneyLabel;
         private System.Windows.Forms.Label MoneyLabelSet;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel9;
     }
 }
 

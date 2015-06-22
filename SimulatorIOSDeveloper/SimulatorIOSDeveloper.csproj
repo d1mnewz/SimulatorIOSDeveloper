@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>apple.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -57,18 +60,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -79,19 +82,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icon_background.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\apple_logo2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_apple.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\1434995918_ios.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icon_background1.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_background2.png" />
@@ -103,13 +94,27 @@
     <None Include="Resources\apple_swift_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\1434996991_41_itunes.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\1434997029_41_itunes.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\freelancer-com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YouTube Hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1434999985_mac.ico" />
+    <Content Include="apple.ico" />
+    <Content Include="Resources\1434996991_41_itunes.png" />
+    <Content Include="Resources\icon_apple.png" />
+    <Content Include="Resources\icon_background.png" />
+    <Content Include="Resources\raphael_ios_simple-black_128x128.png" />
+    <Content Include="Resources\sada.bmp" />
+    <Content Include="Resources\sada.png" />
+    <None Include="Resources\shop.png" />
+    <None Include="Resources\Safari1.png" />
+    <None Include="Resources\Safari.png" />
+    <None Include="Resources\Safari.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

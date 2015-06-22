@@ -93,16 +93,6 @@ namespace SimulatorIOSDeveloper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap apple_logo2 {
-            get {
-                object obj = ResourceManager.GetObject("apple_logo2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap apple_swift_logo {
             get {
                 object obj = ResourceManager.GetObject("apple_swift_logo", resourceCulture);
@@ -153,9 +143,9 @@ namespace SimulatorIOSDeveloper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_background1 {
+        internal static System.Drawing.Bitmap icon_background2 {
             get {
-                object obj = ResourceManager.GetObject("icon_background1", resourceCulture);
+                object obj = ResourceManager.GetObject("icon_background2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +153,79 @@ namespace SimulatorIOSDeveloper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icon_background2 {
+        internal static System.Drawing.Bitmap sada {
             get {
-                object obj = ResourceManager.GetObject("icon_background2", resourceCulture);
+                object obj = ResourceManager.GetObject("sada", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sada3 {
+            get {
+                object obj = ResourceManager.GetObject("sada3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safari {
+            get {
+                object obj = ResourceManager.GetObject("Safari", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safari1 {
+            get {
+                object obj = ResourceManager.GetObject("Safari1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Safari2 {
+            get {
+                object obj = ResourceManager.GetObject("Safari2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shop {
+            get {
+                object obj = ResourceManager.GetObject("shop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YouTube_Hover {
+            get {
+                object obj = ResourceManager.GetObject("YouTube Hover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap YouTube_Hover1 {
+            get {
+                object obj = ResourceManager.GetObject("YouTube Hover1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
