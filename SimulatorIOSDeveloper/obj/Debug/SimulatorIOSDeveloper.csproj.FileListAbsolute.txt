@@ -1,0 +1,9 @@
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\bin\Debug\SimulatorIOSDeveloper.exe.config
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\bin\Debug\SimulatorIOSDeveloper.exe
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\bin\Debug\SimulatorIOSDeveloper.pdb
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.csprojResolveAssemblyReference.cache
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.MainForm.resources
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.Properties.Resources.resources
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.csproj.GenerateResource.Cache
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.exe
+c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.pdb
