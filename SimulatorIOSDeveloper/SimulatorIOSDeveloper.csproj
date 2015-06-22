@@ -111,6 +111,8 @@
     <Content Include="Resources\raphael_ios_simple-black_128x128.png" />
     <Content Include="Resources\sada.bmp" />
     <Content Include="Resources\sada.png" />
+    <None Include="Resources\steve-jobs.png" />
+    <None Include="Resources\Steve_Jobs_128x128.png" />
     <None Include="Resources\shop.png" />
     <None Include="Resources\Safari1.png" />
     <None Include="Resources\Safari.png" />

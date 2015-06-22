@@ -37,17 +37,23 @@
             this.StatusLabel = new System.Windows.Forms.Label();
             this.DevicesBox = new System.Windows.Forms.GroupBox();
             this.WhatToDoBox = new System.Windows.Forms.GroupBox();
-            this.panel9 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.StatusGBox.SuspendLayout();
+            this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // VisualizationBox
@@ -57,7 +63,7 @@
             this.VisualizationBox.Size = new System.Drawing.Size(166, 370);
             this.VisualizationBox.TabIndex = 0;
             this.VisualizationBox.TabStop = false;
-            this.VisualizationBox.Text = "groupBox1";
+            this.VisualizationBox.Text = "Check your look!";
             // 
             // StatusGBox
             // 
@@ -111,6 +117,7 @@
             // DevicesBox
             // 
             this.DevicesBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DevicesBox.Controls.Add(this.label1);
             this.DevicesBox.Location = new System.Drawing.Point(12, 94);
             this.DevicesBox.Name = "DevicesBox";
             this.DevicesBox.Size = new System.Drawing.Size(188, 262);
@@ -134,15 +141,14 @@
             this.WhatToDoBox.TabStop = false;
             this.WhatToDoBox.Text = "What to do ?";
             // 
-            // panel9
+            // label1
             // 
-            this.panel9.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.shop;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel9.Location = new System.Drawing.Point(115, 71);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(53, 50);
-            this.panel9.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // panel2
             // 
@@ -163,6 +169,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(72, 69);
             this.panel1.TabIndex = 1;
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.shop;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel9.Location = new System.Drawing.Point(115, 72);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(53, 50);
+            this.panel9.TabIndex = 0;
             // 
             // panel7
             // 
@@ -224,12 +240,45 @@
             this.panel3.Size = new System.Drawing.Size(53, 50);
             this.panel3.TabIndex = 0;
             // 
+            // panel10
+            // 
+            this.panel10.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.steve_jobs;
+            this.panel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel10.Location = new System.Drawing.Point(7, 13);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(98, 99);
+            this.panel10.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Plantagenet Cherokee", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(111, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 92);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "blah blah blah blah blah blah blah blah blah";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label2.UseCompatibleTextRendering = true;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.panel10);
+            this.groupBox1.Location = new System.Drawing.Point(206, 219);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(227, 118);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(634, 413);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.WhatToDoBox);
@@ -240,9 +289,13 @@
             this.Name = "MainForm";
             this.Opacity = 0.98D;
             this.Text = "IOS developer simulator";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.StatusGBox.ResumeLayout(false);
             this.StatusGBox.PerformLayout();
+            this.DevicesBox.ResumeLayout(false);
+            this.DevicesBox.PerformLayout();
             this.WhatToDoBox.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -266,6 +319,10 @@
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

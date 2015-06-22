@@ -213,6 +213,26 @@ namespace SimulatorIOSDeveloper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap steve_jobs {
+            get {
+                object obj = ResourceManager.GetObject("steve-jobs", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Steve_Jobs_128x128 {
+            get {
+                object obj = ResourceManager.GetObject("Steve_Jobs_128x128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap YouTube_Hover {
             get {
                 object obj = ResourceManager.GetObject("YouTube Hover", resourceCulture);
