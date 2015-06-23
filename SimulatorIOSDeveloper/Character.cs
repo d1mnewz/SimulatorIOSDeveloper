@@ -19,7 +19,7 @@ namespace SimulatorIOSDeveloper
             this.CurrentStatus = "ididot retard";
             this.Name = "John Doe";
             this.CurrentDevices = new List<Device>();
-            this.AddDevice("IPhone", "4c", 2014);
+            this.AddDevice("iPhone", "4c", 2014);
            // this.AddDevice("IPhone", "4c", 2015);
             this.CharacterStats = new Stats();
         }
