@@ -23,27 +23,16 @@ namespace SimulatorIOSDeveloper
             {
                 this.DeviceListBox.Items.Add(el.Name);
             }
+            this.SocialBar.Value = MainForm.GetObj().CharacterStats.SocialValue;
+            this.HealthBar.Value = MainForm.GetObj().CharacterStats.HealthValue;
+            this.ProgrammingBar.Value = MainForm.GetObj().CharacterStats.ProgrammingValue;
+            
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
 
-        }
+       
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MoneyLabelSet_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void DeviceListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -54,6 +43,7 @@ namespace SimulatorIOSDeveloper
             {
                 this.DNameLabelSet.Text = GetObj().CurrentDevices.First(x => x.Name == DeviceListBox.SelectedItem.ToString()).Name;
                 this.DModelLabelSet.Text = GetObj().CurrentDevices.First(x => x.Name == DeviceListBox.SelectedItem.ToString()).Model;
+                this.DYearLabelSet.Text = GetObj().CurrentDevices.First(x => x.Name == DeviceListBox.SelectedItem.ToString()).Year.ToString();
                 //this.ModelLabelSet.Text = MainForm.GetObj().CurrentDevices.Find(x => x.Name.Equals(DeviceListBox.SelectedItem.ToString()));
 
             }
@@ -63,11 +53,7 @@ namespace SimulatorIOSDeveloper
             }
         }
 
-        private void DevicesBox_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+       
 
     }
 }

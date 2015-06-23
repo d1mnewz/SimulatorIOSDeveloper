@@ -67,6 +67,8 @@
             this.ProgrammingLabel = new System.Windows.Forms.Label();
             this.HealthLabel = new System.Windows.Forms.Label();
             this.SocialLabel = new System.Windows.Forms.Label();
+            this.DYearLabel = new System.Windows.Forms.Label();
+            this.DYearLabelSet = new System.Windows.Forms.Label();
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
@@ -105,7 +107,6 @@
             this.NameLabel.Size = new System.Drawing.Size(125, 13);
             this.NameLabel.TabIndex = 5;
             this.NameLabel.Text = "what`s up, #username#?";
-            this.NameLabel.Click += new System.EventHandler(this.label1_Click);
             // 
             // MoneyLabelSet
             // 
@@ -115,7 +116,6 @@
             this.MoneyLabelSet.Size = new System.Drawing.Size(13, 13);
             this.MoneyLabelSet.TabIndex = 4;
             this.MoneyLabelSet.Text = "0";
-            this.MoneyLabelSet.Click += new System.EventHandler(this.MoneyLabelSet_Click);
             // 
             // MoneyLabel
             // 
@@ -147,6 +147,8 @@
             // DevicesBox
             // 
             this.DevicesBox.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.DevicesBox.Controls.Add(this.DYearLabelSet);
+            this.DevicesBox.Controls.Add(this.DYearLabel);
             this.DevicesBox.Controls.Add(this.DModelLabelSet);
             this.DevicesBox.Controls.Add(this.DNameLabelSet);
             this.DevicesBox.Controls.Add(this.DModelLabel);
@@ -158,7 +160,6 @@
             this.DevicesBox.TabIndex = 0;
             this.DevicesBox.TabStop = false;
             this.DevicesBox.Text = "Your Devices";
-            this.DevicesBox.Enter += new System.EventHandler(this.DevicesBox_Enter);
             // 
             // DModelLabelSet
             // 
@@ -181,7 +182,7 @@
             // DModelLabel
             // 
             this.DModelLabel.AutoSize = true;
-            this.DModelLabel.Location = new System.Drawing.Point(87, 39);
+            this.DModelLabel.Location = new System.Drawing.Point(87, 35);
             this.DModelLabel.Name = "DModelLabel";
             this.DModelLabel.Size = new System.Drawing.Size(39, 13);
             this.DModelLabel.TabIndex = 8;
@@ -371,7 +372,6 @@
             this.QuoteLabel.Text = "blah blah blah blah blah blah blah blah blah";
             this.QuoteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.QuoteLabel.UseCompatibleTextRendering = true;
-            this.QuoteLabel.Click += new System.EventHandler(this.label2_Click);
             // 
             // QuoteBox
             // 
@@ -418,6 +418,7 @@
             this.SocialBar.Location = new System.Drawing.Point(87, 14);
             this.SocialBar.Name = "SocialBar";
             this.SocialBar.Size = new System.Drawing.Size(100, 23);
+            this.SocialBar.Step = 1;
             this.SocialBar.TabIndex = 10;
             // 
             // ProgrammingLabel
@@ -447,6 +448,24 @@
             this.SocialLabel.TabIndex = 6;
             this.SocialLabel.Text = "Social";
             // 
+            // DYearLabel
+            // 
+            this.DYearLabel.AutoSize = true;
+            this.DYearLabel.Location = new System.Drawing.Point(87, 54);
+            this.DYearLabel.Name = "DYearLabel";
+            this.DYearLabel.Size = new System.Drawing.Size(32, 13);
+            this.DYearLabel.TabIndex = 6;
+            this.DYearLabel.Text = "Year:";
+            // 
+            // DYearLabelSet
+            // 
+            this.DYearLabelSet.AutoSize = true;
+            this.DYearLabelSet.Location = new System.Drawing.Point(122, 54);
+            this.DYearLabelSet.Name = "DYearLabelSet";
+            this.DYearLabelSet.Size = new System.Drawing.Size(37, 13);
+            this.DYearLabelSet.TabIndex = 11;
+            this.DYearLabelSet.Text = "          ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,7 +484,6 @@
             this.Name = "MainForm";
             this.Opacity = 0.95D;
             this.Text = "IOS developer simulator";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.StatusGBox.ResumeLayout(false);
             this.StatusGBox.PerformLayout();
             this.DevicesBox.ResumeLayout(false);
@@ -506,7 +524,6 @@
         private System.Windows.Forms.Label ProgrammingLabel;
         private System.Windows.Forms.ProgressBar ProgrammingBar;
         private System.Windows.Forms.ProgressBar HealthBar;
-        private System.Windows.Forms.ProgressBar SocialBar;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
@@ -518,6 +535,9 @@
         private System.Windows.Forms.Label DModelLabel;
         private System.Windows.Forms.Label DModelLabelSet;
         private System.Windows.Forms.Label DNameLabelSet;
+        private System.Windows.Forms.Label DYearLabel;
+        private System.Windows.Forms.Label DYearLabelSet;
+        public System.Windows.Forms.ProgressBar SocialBar;
     }
 }
 
