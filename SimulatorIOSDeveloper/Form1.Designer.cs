@@ -37,6 +37,8 @@
             this.StatusLabelSet = new System.Windows.Forms.Label();
             this.StatusLabel = new System.Windows.Forms.Label();
             this.DevicesBox = new System.Windows.Forms.GroupBox();
+            this.DYearLabelSet = new System.Windows.Forms.Label();
+            this.DYearLabel = new System.Windows.Forms.Label();
             this.DModelLabelSet = new System.Windows.Forms.Label();
             this.DNameLabelSet = new System.Windows.Forms.Label();
             this.DModelLabel = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.ProgrammingLabel = new System.Windows.Forms.Label();
             this.HealthLabel = new System.Windows.Forms.Label();
             this.SocialLabel = new System.Windows.Forms.Label();
-            this.DYearLabel = new System.Windows.Forms.Label();
-            this.DYearLabelSet = new System.Windows.Forms.Label();
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
@@ -161,10 +161,28 @@
             this.DevicesBox.TabStop = false;
             this.DevicesBox.Text = "Your Devices";
             // 
+            // DYearLabelSet
+            // 
+            this.DYearLabelSet.AutoSize = true;
+            this.DYearLabelSet.Location = new System.Drawing.Point(122, 54);
+            this.DYearLabelSet.Name = "DYearLabelSet";
+            this.DYearLabelSet.Size = new System.Drawing.Size(37, 13);
+            this.DYearLabelSet.TabIndex = 11;
+            this.DYearLabelSet.Text = "          ";
+            // 
+            // DYearLabel
+            // 
+            this.DYearLabel.AutoSize = true;
+            this.DYearLabel.Location = new System.Drawing.Point(87, 54);
+            this.DYearLabel.Name = "DYearLabel";
+            this.DYearLabel.Size = new System.Drawing.Size(32, 13);
+            this.DYearLabel.TabIndex = 6;
+            this.DYearLabel.Text = "Year:";
+            // 
             // DModelLabelSet
             // 
             this.DModelLabelSet.AutoSize = true;
-            this.DModelLabelSet.Location = new System.Drawing.Point(122, 39);
+            this.DModelLabelSet.Location = new System.Drawing.Point(122, 35);
             this.DModelLabelSet.Name = "DModelLabelSet";
             this.DModelLabelSet.Size = new System.Drawing.Size(46, 13);
             this.DModelLabelSet.TabIndex = 10;
@@ -447,24 +465,6 @@
             this.SocialLabel.Size = new System.Drawing.Size(36, 13);
             this.SocialLabel.TabIndex = 6;
             this.SocialLabel.Text = "Social";
-            // 
-            // DYearLabel
-            // 
-            this.DYearLabel.AutoSize = true;
-            this.DYearLabel.Location = new System.Drawing.Point(87, 54);
-            this.DYearLabel.Name = "DYearLabel";
-            this.DYearLabel.Size = new System.Drawing.Size(32, 13);
-            this.DYearLabel.TabIndex = 6;
-            this.DYearLabel.Text = "Year:";
-            // 
-            // DYearLabelSet
-            // 
-            this.DYearLabelSet.AutoSize = true;
-            this.DYearLabelSet.Location = new System.Drawing.Point(122, 54);
-            this.DYearLabelSet.Name = "DYearLabelSet";
-            this.DYearLabelSet.Size = new System.Drawing.Size(37, 13);
-            this.DYearLabelSet.TabIndex = 11;
-            this.DYearLabelSet.Text = "          ";
             // 
             // MainForm
             // 

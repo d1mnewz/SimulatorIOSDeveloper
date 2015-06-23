@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SimulatorIOSDeveloper
 {
@@ -20,9 +19,26 @@ namespace SimulatorIOSDeveloper
             this.CurrentStatus = "ididot retard";
             this.Name = "John Doe";
             this.CurrentDevices = new List<Device>();
-            this.CurrentDevices.Add(new Device("IPhone", "4c", 2012));
-            this.CurrentDevices.Add(new Device("MacBook", "Pro Retina 13`", 2014));
+            this.AddDevice("IPhone", "4c", 2014);
+           // this.AddDevice("IPhone", "4c", 2015);
             this.CharacterStats = new Stats();
+        }
+        public void AddDevice(String name, String model, int year)
+        {
+            // well done!
+
+            // if not contains such a device already
+            if (!this.CurrentDevices.Select(x => x.Name.ToLower()).Contains(name.ToLower()))
+                this.CurrentDevices.Add(new Device(name, model, year));
+            else
+            {
+                if (year > CurrentDevices.First(x => x.Name.Equals(name)).Year)
+                {
+                    this.CurrentDevices.Remove(CurrentDevices.First(x => x.Name.Equals(name)));
+                    this.CurrentDevices.Add(new Device(name, model, year));
+                }
+            }
+            
         }
         // add functions to do something(listen to music etc)
 
