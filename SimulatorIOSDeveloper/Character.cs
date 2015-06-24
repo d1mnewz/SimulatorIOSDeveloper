@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-
+using System.Threading.Tasks;
 namespace SimulatorIOSDeveloper
 {
     public class Character
@@ -12,7 +12,7 @@ namespace SimulatorIOSDeveloper
         public double Money;
         public String CurrentStatus;
         public List<Device> CurrentDevices;
-
+        private Random rnd = new Random();
         public Character()
         {
             this.Money = 200;
@@ -39,6 +39,26 @@ namespace SimulatorIOSDeveloper
                 }
             }
             
+        }
+        public void ToFreelance()
+        {
+            var t = Task<int>.Factory.StartNew(() =>
+            {
+                return rnd.Next(1, 100);
+            });
+            t.Wait();
+
+            if (t.Result < this.CharacterStats.ProgrammingValue)
+            {
+                int moneyGain = rnd.Next(1, 10) * this.CharacterStats.ProgrammingValue;
+                int skillGain = rnd.Next(1, 3);
+                this.Money += moneyGain;
+                this.CharacterStats.ProgrammingValue += skillGain;
+                this.CharacterStats.SocialValue -= 1;
+                // to add sound
+                MessageBox.Show(String.Format("Money Gain - {0}\nSkill Point Gain - {1}", moneyGain, skillGain), "Success!");
+            }
+            else MessageBox.Show("Unlucky i cannot find a project that i can do properly %(", "Dayum!");
         }
         // add functions to do something(listen to music etc)
 

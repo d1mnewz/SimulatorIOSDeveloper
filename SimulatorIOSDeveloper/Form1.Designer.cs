@@ -57,11 +57,9 @@
             this.SmootheyPanel = new System.Windows.Forms.Panel();
             this.SwiftPanel = new System.Windows.Forms.Panel();
             this.MusicPanel = new System.Windows.Forms.Panel();
-            this.AppleLogoBox = new System.Windows.Forms.Panel();
-            this.MainControl = new System.Windows.Forms.Panel();
-            this.QuotePicture = new System.Windows.Forms.Panel();
             this.QuoteLabel = new System.Windows.Forms.Label();
             this.QuoteBox = new System.Windows.Forms.GroupBox();
+            this.QuotePicture = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ProgrammingBar = new System.Windows.Forms.ProgressBar();
             this.HealthBar = new System.Windows.Forms.ProgressBar();
@@ -69,6 +67,8 @@
             this.ProgrammingLabel = new System.Windows.Forms.Label();
             this.HealthLabel = new System.Windows.Forms.Label();
             this.SocialLabel = new System.Windows.Forms.Label();
+            this.AppleLogoBox = new System.Windows.Forms.Panel();
+            this.MainControl = new System.Windows.Forms.Panel();
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
@@ -276,10 +276,12 @@
             // 
             // panel11
             // 
+            this.panel11.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1435166519_cycle;
             this.panel11.Location = new System.Drawing.Point(172, 72);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(49, 47);
+            this.panel11.Size = new System.Drawing.Size(49, 50);
             this.panel11.TabIndex = 6;
+            this.panel11.Click += new System.EventHandler(this.panel11_Click);
             // 
             // ShopPanel
             // 
@@ -290,6 +292,7 @@
             this.ShopPanel.Name = "ShopPanel";
             this.ShopPanel.Size = new System.Drawing.Size(53, 50);
             this.ShopPanel.TabIndex = 0;
+            this.ShopPanel.Click += new System.EventHandler(this.ShopPanel_Click);
             // 
             // SafariPanel
             // 
@@ -300,6 +303,7 @@
             this.SafariPanel.Name = "SafariPanel";
             this.SafariPanel.Size = new System.Drawing.Size(53, 51);
             this.SafariPanel.TabIndex = 0;
+            this.SafariPanel.Click += new System.EventHandler(this.SafariPanel_Click);
             // 
             // FreelancePanel
             // 
@@ -310,6 +314,7 @@
             this.FreelancePanel.Name = "FreelancePanel";
             this.FreelancePanel.Size = new System.Drawing.Size(53, 50);
             this.FreelancePanel.TabIndex = 0;
+            this.FreelancePanel.Click += new System.EventHandler(this.FreelancePanel_Click);
             // 
             // YoutubePanel
             // 
@@ -318,18 +323,20 @@
             this.YoutubePanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.YoutubePanel.Location = new System.Drawing.Point(172, 16);
             this.YoutubePanel.Name = "YoutubePanel";
-            this.YoutubePanel.Size = new System.Drawing.Size(53, 50);
+            this.YoutubePanel.Size = new System.Drawing.Size(53, 60);
             this.YoutubePanel.TabIndex = 5;
+            this.YoutubePanel.Click += new System.EventHandler(this.YoutubePanel_Click);
             // 
             // SmootheyPanel
             // 
             this.SmootheyPanel.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.icon_2_119;
             this.SmootheyPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.SmootheyPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SmootheyPanel.Location = new System.Drawing.Point(115, 16);
+            this.SmootheyPanel.Location = new System.Drawing.Point(115, 19);
             this.SmootheyPanel.Name = "SmootheyPanel";
             this.SmootheyPanel.Size = new System.Drawing.Size(53, 50);
             this.SmootheyPanel.TabIndex = 2;
+            this.SmootheyPanel.Click += new System.EventHandler(this.SmootheyPanel_Click);
             // 
             // SwiftPanel
             // 
@@ -338,8 +345,9 @@
             this.SwiftPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.SwiftPanel.Location = new System.Drawing.Point(59, 16);
             this.SwiftPanel.Name = "SwiftPanel";
-            this.SwiftPanel.Size = new System.Drawing.Size(53, 50);
+            this.SwiftPanel.Size = new System.Drawing.Size(53, 60);
             this.SwiftPanel.TabIndex = 0;
+            this.SwiftPanel.Click += new System.EventHandler(this.SwiftPanel_Click);
             // 
             // MusicPanel
             // 
@@ -348,37 +356,9 @@
             this.MusicPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.MusicPanel.Location = new System.Drawing.Point(7, 16);
             this.MusicPanel.Name = "MusicPanel";
-            this.MusicPanel.Size = new System.Drawing.Size(53, 50);
+            this.MusicPanel.Size = new System.Drawing.Size(53, 60);
             this.MusicPanel.TabIndex = 0;
-            // 
-            // AppleLogoBox
-            // 
-            this.AppleLogoBox.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1434995918_ios;
-            this.AppleLogoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.AppleLogoBox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AppleLogoBox.Location = new System.Drawing.Point(7, 12);
-            this.AppleLogoBox.Name = "AppleLogoBox";
-            this.AppleLogoBox.Size = new System.Drawing.Size(52, 76);
-            this.AppleLogoBox.TabIndex = 0;
-            // 
-            // MainControl
-            // 
-            this.MainControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainControl.BackgroundImage")));
-            this.MainControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.MainControl.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MainControl.Location = new System.Drawing.Point(277, 343);
-            this.MainControl.Name = "MainControl";
-            this.MainControl.Size = new System.Drawing.Size(72, 69);
-            this.MainControl.TabIndex = 1;
-            // 
-            // QuotePicture
-            // 
-            this.QuotePicture.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.steve_jobs;
-            this.QuotePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.QuotePicture.Location = new System.Drawing.Point(7, 13);
-            this.QuotePicture.Name = "QuotePicture";
-            this.QuotePicture.Size = new System.Drawing.Size(98, 99);
-            this.QuotePicture.TabIndex = 2;
+            this.MusicPanel.Click += new System.EventHandler(this.MusicPanel_Click);
             // 
             // QuoteLabel
             // 
@@ -401,6 +381,15 @@
             this.QuoteBox.TabIndex = 4;
             this.QuoteBox.TabStop = false;
             this.QuoteBox.Text = "Inspirational quote";
+            // 
+            // QuotePicture
+            // 
+            this.QuotePicture.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.steve_jobs;
+            this.QuotePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.QuotePicture.Location = new System.Drawing.Point(7, 13);
+            this.QuotePicture.Name = "QuotePicture";
+            this.QuotePicture.Size = new System.Drawing.Size(98, 99);
+            this.QuotePicture.TabIndex = 2;
             // 
             // groupBox2
             // 
@@ -465,6 +454,27 @@
             this.SocialLabel.Size = new System.Drawing.Size(36, 13);
             this.SocialLabel.TabIndex = 6;
             this.SocialLabel.Text = "Social";
+            // 
+            // AppleLogoBox
+            // 
+            this.AppleLogoBox.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1434995918_ios;
+            this.AppleLogoBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.AppleLogoBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AppleLogoBox.Location = new System.Drawing.Point(7, 12);
+            this.AppleLogoBox.Name = "AppleLogoBox";
+            this.AppleLogoBox.Size = new System.Drawing.Size(52, 76);
+            this.AppleLogoBox.TabIndex = 0;
+            this.AppleLogoBox.Click += new System.EventHandler(this.AppleLogoBox_Click);
+            // 
+            // MainControl
+            // 
+            this.MainControl.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MainControl.BackgroundImage")));
+            this.MainControl.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.MainControl.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MainControl.Location = new System.Drawing.Point(277, 343);
+            this.MainControl.Name = "MainControl";
+            this.MainControl.Size = new System.Drawing.Size(72, 69);
+            this.MainControl.TabIndex = 1;
             // 
             // MainForm
             // 

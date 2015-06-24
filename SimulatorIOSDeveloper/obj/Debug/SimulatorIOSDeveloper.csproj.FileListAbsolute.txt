@@ -7,3 +7,4 @@ c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\S
 c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.csproj.GenerateResource.Cache
 c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.exe
 c:\users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.pdb
+C:\Users\zhluktenko\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\obj\Debug\SimulatorIOSDeveloper.ShopForm.resources

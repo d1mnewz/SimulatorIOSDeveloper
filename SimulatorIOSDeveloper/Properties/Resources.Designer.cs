@@ -93,6 +93,26 @@ namespace SimulatorIOSDeveloper.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1435166415_pen_stroke_sketch_doodle_lineart_88 {
+            get {
+                object obj = ResourceManager.GetObject("1435166415_pen_stroke_sketch_doodle_lineart_88", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1435166519_cycle {
+            get {
+                object obj = ResourceManager.GetObject("1435166519_cycle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap apple_swift_logo {
             get {
                 object obj = ResourceManager.GetObject("apple_swift_logo", resourceCulture);

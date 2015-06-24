@@ -25,6 +25,7 @@ namespace SimulatorIOSDeveloper
             this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
             this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
             this.ProgrammingBar.Value = this.obj.CharacterStats.ProgrammingValue;
+            this.DeviceListBox.SelectedIndex = 0;
             
         }
 
@@ -52,6 +53,59 @@ namespace SimulatorIOSDeveloper
                 // dont do anything
             }
         }
+
+        private void AppleLogoBox_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://whyapplesucks.tumblr.com/");
+        }
+
+        private void MusicPanel_Click(object sender, EventArgs e)
+        {
+            // to do
+        }
+
+        private void SwiftPanel_Click(object sender, EventArgs e)
+        {
+            // to do
+        }
+
+        private void SmootheyPanel_Click(object sender, EventArgs e)
+        {
+            // to do
+        }
+
+        private void YoutubePanel_Click(object sender, EventArgs e)
+        {
+            // to do
+        }
+
+        private void FreelancePanel_Click(object sender, EventArgs e)
+        {
+            obj.ToFreelance();
+            this.MoneyLabelSet.Text = obj.Money + "$";
+            this.ProgrammingBar.Value = obj.CharacterStats.ProgrammingValue;
+            this.SocialBar.Value = obj.CharacterStats.SocialValue;
+        }
+
+        private void SafariPanel_Click(object sender, EventArgs e)
+        {
+            // to do
+        }
+
+        private void ShopPanel_Click(object sender, EventArgs e)
+        {
+            ShopForm sf = new ShopForm() { Visible = true };
+            // to do
+        }
+
+        private void panel11_Click(object sender, EventArgs e)
+        {
+            // to do
+        }
+
+
+
+
 
        
 
