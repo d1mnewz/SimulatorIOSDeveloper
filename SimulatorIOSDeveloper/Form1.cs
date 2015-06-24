@@ -72,6 +72,10 @@ namespace SimulatorIOSDeveloper
         private void SmootheyPanel_Click(object sender, EventArgs e)
         {
             // to do
+            this.obj.ToDrinkSmoothie();
+            this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
+            this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
+            this.MoneyLabelSet.Text = obj.Money + "$";
         }
 
         private void YoutubePanel_Click(object sender, EventArgs e)

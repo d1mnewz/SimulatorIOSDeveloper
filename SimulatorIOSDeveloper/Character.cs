@@ -15,7 +15,7 @@ namespace SimulatorIOSDeveloper
         private Random rnd = new Random();
         public Character()
         {
-            this.Money = 200;
+            this.Money = 10;
             this.CurrentStatus = "ididot retard";
             this.Name = "John Doe";
             this.CurrentDevices = new List<Device>();
@@ -23,6 +23,21 @@ namespace SimulatorIOSDeveloper
            // this.AddDevice("IPhone", "4c", 2015);
             this.CharacterStats = new Stats();
         }
+
+        public bool PayMoney(int value)
+        {
+            if (this.Money - value >= 0)
+            {
+                this.Money -= value;
+                return true;
+            }
+            else
+            {
+                
+                return false;
+            }
+        }
+
         public void AddDevice(String name, String model, int year)
         {
             // well done!
@@ -53,12 +68,33 @@ namespace SimulatorIOSDeveloper
                 int moneyGain = rnd.Next(1, 10) * this.CharacterStats.ProgrammingValue;
                 int skillGain = rnd.Next(1, 3);
                 this.Money += moneyGain;
-                this.CharacterStats.ProgrammingValue += skillGain;
-                this.CharacterStats.SocialValue -= 1;
+                this.CharacterStats.IncreaseBy(Stats.StatsNames.Programming, skillGain);
+                this.CharacterStats.DecreaseBy(Stats.StatsNames.Social, 1);
                 // to add sound
                 MessageBox.Show(String.Format("Money Gain - {0}\nSkill Point Gain - {1}", moneyGain, skillGain), "Success!");
             }
-            else MessageBox.Show("Unlucky i cannot find a project that i can do properly %(", "Dayum!");
+            else MessageBox.Show("Unlucky you cannot find a project that you can do properly %(", "Dayum!");
+        }
+
+        public void ToDrinkSmoothie()
+        {
+            int skillGain = rnd.Next(1, 3);
+            int healthGain = rnd.Next(1, 2);
+            String finalStr = "";
+            bool enoughMoney = this.PayMoney(3);
+            if (enoughMoney)
+            {
+                this.CharacterStats.IncreaseBy(Stats.StatsNames.Health, healthGain);
+                if (rnd.Next(1, 3) == 1)
+                {
+
+                    this.CharacterStats.IncreaseBy(Stats.StatsNames.Social, skillGain);
+                    finalStr += String.Format("You`ve met a cool hipster girl. She told you about new music genre in Finland!\nSocial skills increased by {0}\n", skillGain);
+                }
+                finalStr += String.Format("Health increased by {0}", healthGain);
+                MessageBox.Show(finalStr, "Worth it!");
+            }
+            else MessageBox.Show("Not enough money", "WTF?");
         }
         // add functions to do something(listen to music etc)
 

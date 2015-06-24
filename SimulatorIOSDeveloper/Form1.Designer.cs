@@ -54,7 +54,7 @@
             this.SafariPanel = new System.Windows.Forms.Panel();
             this.FreelancePanel = new System.Windows.Forms.Panel();
             this.YoutubePanel = new System.Windows.Forms.Panel();
-            this.SmootheyPanel = new System.Windows.Forms.Panel();
+            this.SmootiePanel = new System.Windows.Forms.Panel();
             this.SwiftPanel = new System.Windows.Forms.Panel();
             this.MusicPanel = new System.Windows.Forms.Panel();
             this.QuoteLabel = new System.Windows.Forms.Label();
@@ -236,7 +236,7 @@
             this.WhatToDoBox.Controls.Add(this.SafariPanel);
             this.WhatToDoBox.Controls.Add(this.FreelancePanel);
             this.WhatToDoBox.Controls.Add(this.YoutubePanel);
-            this.WhatToDoBox.Controls.Add(this.SmootheyPanel);
+            this.WhatToDoBox.Controls.Add(this.SmootiePanel);
             this.WhatToDoBox.Controls.Add(this.SwiftPanel);
             this.WhatToDoBox.Controls.Add(this.MusicPanel);
             this.WhatToDoBox.Location = new System.Drawing.Point(206, 12);
@@ -277,9 +277,9 @@
             // panel11
             // 
             this.panel11.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1435166519_cycle;
-            this.panel11.Location = new System.Drawing.Point(172, 72);
+            this.panel11.Location = new System.Drawing.Point(165, 72);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(49, 50);
+            this.panel11.Size = new System.Drawing.Size(56, 50);
             this.panel11.TabIndex = 6;
             this.panel11.Click += new System.EventHandler(this.panel11_Click);
             // 
@@ -321,22 +321,22 @@
             this.YoutubePanel.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.sada;
             this.YoutubePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.YoutubePanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.YoutubePanel.Location = new System.Drawing.Point(172, 16);
+            this.YoutubePanel.Location = new System.Drawing.Point(162, 16);
             this.YoutubePanel.Name = "YoutubePanel";
-            this.YoutubePanel.Size = new System.Drawing.Size(53, 60);
+            this.YoutubePanel.Size = new System.Drawing.Size(63, 60);
             this.YoutubePanel.TabIndex = 5;
             this.YoutubePanel.Click += new System.EventHandler(this.YoutubePanel_Click);
             // 
-            // SmootheyPanel
+            // SmootiePanel
             // 
-            this.SmootheyPanel.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.icon_2_119;
-            this.SmootheyPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.SmootheyPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.SmootheyPanel.Location = new System.Drawing.Point(115, 19);
-            this.SmootheyPanel.Name = "SmootheyPanel";
-            this.SmootheyPanel.Size = new System.Drawing.Size(53, 50);
-            this.SmootheyPanel.TabIndex = 2;
-            this.SmootheyPanel.Click += new System.EventHandler(this.SmootheyPanel_Click);
+            this.SmootiePanel.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.icon_2_119;
+            this.SmootiePanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.SmootiePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SmootiePanel.Location = new System.Drawing.Point(115, 19);
+            this.SmootiePanel.Name = "SmootiePanel";
+            this.SmootiePanel.Size = new System.Drawing.Size(53, 50);
+            this.SmootiePanel.TabIndex = 2;
+            this.SmootiePanel.Click += new System.EventHandler(this.SmootheyPanel_Click);
             // 
             // SwiftPanel
             // 
@@ -516,7 +516,7 @@
         private System.Windows.Forms.Panel AppleLogoBox;
         private System.Windows.Forms.Panel MusicPanel;
         private System.Windows.Forms.Panel SwiftPanel;
-        private System.Windows.Forms.Panel SmootheyPanel;
+        private System.Windows.Forms.Panel SmootiePanel;
         private System.Windows.Forms.Label StatusLabel;
         private System.Windows.Forms.Label StatusLabelSet;
         private System.Windows.Forms.Label MoneyLabel;
