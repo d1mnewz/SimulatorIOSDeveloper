@@ -102,8 +102,9 @@ namespace SimulatorIOSDeveloper
             // to do
         }
 
-        private void panel11_Click(object sender, EventArgs e)
+        private void BikePanel_Click(object sender, EventArgs e)
         {
+
             // to do
         }
 

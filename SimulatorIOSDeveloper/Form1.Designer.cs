@@ -49,7 +49,7 @@
             this.panel14 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.panel11 = new System.Windows.Forms.Panel();
+            this.BikePanel = new System.Windows.Forms.Panel();
             this.ShopPanel = new System.Windows.Forms.Panel();
             this.SafariPanel = new System.Windows.Forms.Panel();
             this.FreelancePanel = new System.Windows.Forms.Panel();
@@ -231,7 +231,7 @@
             this.WhatToDoBox.Controls.Add(this.panel14);
             this.WhatToDoBox.Controls.Add(this.panel13);
             this.WhatToDoBox.Controls.Add(this.panel12);
-            this.WhatToDoBox.Controls.Add(this.panel11);
+            this.WhatToDoBox.Controls.Add(this.BikePanel);
             this.WhatToDoBox.Controls.Add(this.ShopPanel);
             this.WhatToDoBox.Controls.Add(this.SafariPanel);
             this.WhatToDoBox.Controls.Add(this.FreelancePanel);
@@ -274,14 +274,15 @@
             this.panel12.Size = new System.Drawing.Size(53, 48);
             this.panel12.TabIndex = 7;
             // 
-            // panel11
+            // BikePanel
             // 
-            this.panel11.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1435166519_cycle;
-            this.panel11.Location = new System.Drawing.Point(165, 72);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(56, 50);
-            this.panel11.TabIndex = 6;
-            this.panel11.Click += new System.EventHandler(this.panel11_Click);
+            this.BikePanel.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1435166519_cycle;
+            this.BikePanel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BikePanel.Location = new System.Drawing.Point(165, 72);
+            this.BikePanel.Name = "BikePanel";
+            this.BikePanel.Size = new System.Drawing.Size(56, 50);
+            this.BikePanel.TabIndex = 6;
+            this.BikePanel.Click += new System.EventHandler(this.BikePanel_Click);
             // 
             // ShopPanel
             // 
@@ -490,7 +491,10 @@
             this.Controls.Add(this.DevicesBox);
             this.Controls.Add(this.StatusGBox);
             this.Controls.Add(this.VisualizationBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
             this.Opacity = 0.95D;
             this.Text = "IOS developer simulator";
@@ -538,7 +542,7 @@
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel13;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel BikePanel;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label DNameLabel;
         private System.Windows.Forms.ListBox DeviceListBox;
