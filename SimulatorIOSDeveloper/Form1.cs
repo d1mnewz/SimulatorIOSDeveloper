@@ -41,6 +41,18 @@ namespace SimulatorIOSDeveloper
             counter++;
             this.TurnsCountValue.Text = Convert.ToString(counter);
         }
+        public void UpdateMoney()
+        {
+            this.MoneyLabelSet.Text = obj.Money + "$";
+
+        }
+        public void UpdateSkills()
+        {
+            this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
+            this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
+            this.ProgrammingBar.Value = this.obj.CharacterStats.ProgrammingValue;
+            this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
+        }
         private void DeviceListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -70,12 +82,17 @@ namespace SimulatorIOSDeveloper
         {
             // to do
             //this. 
+            this.obj.ListenMusic();
+            UpdateSkills();
             this.UpdateCounter();
         }
 
         private void SwiftPanel_Click(object sender, EventArgs e)
         {
             // to do
+            obj.ToCodeSwift();
+            this.UpdateSkills();
+            this.UpdateMoney();
             this.UpdateCounter();
 
         }
@@ -86,6 +103,7 @@ namespace SimulatorIOSDeveloper
             this.obj.ToDrinkSmoothie();
             this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
             this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
+            this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
             this.MoneyLabelSet.Text = obj.Money + "$";
             this.UpdateCounter();
 

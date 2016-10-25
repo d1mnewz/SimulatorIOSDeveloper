@@ -5,6 +5,9 @@ using System.Windows.Forms;
 using System.Threading.Tasks;
 namespace SimulatorIOSDeveloper
 {
+    // to make save game in file
+    // load
+    // but encryption to avoid cheating
     public class Character
     {
         public String Name;
@@ -43,6 +46,8 @@ namespace SimulatorIOSDeveloper
 
             int moodGain = rnd.Next(1, 2);
             this.CharacterStats.IncreaseBy(Stats.StatsNames.Mood, moodGain);
+            MessageBox.Show(String.Format("Mood Gain - {0}", moodGain), "Success!");
+
 
         }
         public void AddDevice(String name, String model, int year)
@@ -62,6 +67,44 @@ namespace SimulatorIOSDeveloper
             }
             
         }
+        public void ToCodeSwift()
+        {
+            int skillGain = 0;
+            int randomEvent = rnd.Next(0, 100); 
+            switch(randomEvent)
+            {
+                case 0:
+                    MessageBox.Show("PornHub security spotted you making an extended adBlocker and decided to file suit against you. -50$");
+                    skillGain = 3;
+                    this.CharacterStats.DecreaseBy(Stats.StatsNames.Mood, 2);
+                    this.Money -= 50;
+                    break;
+                case 4:
+                    MessageBox.Show("Someone hacked 4chan again... Wasn`t it you?", "Nice one");
+                    skillGain = 4;
+                    break;
+                case 42:
+                    MessageBox.Show("You found the answer to life the universe and everything!", "WOW!");
+                    skillGain = 5;
+                    break;
+                case 77 :
+                    MessageBox.Show("Your startUp about levitating kangaroos in NY was spotted by a weird but super rich arabian prince. +100$.", "JackPot");
+                    this.Money += 100;
+                    skillGain = 5;
+                    break;
+                default:
+                    skillGain = rnd.Next(1, 3);
+                    
+                    this.CharacterStats.DecreaseBy(Stats.StatsNames.Social, 1);
+                    MessageBox.Show(String.Format("Skill increased by {0}", skillGain.ToString()), "Nicely done");
+                    break;
+            }
+            this.CharacterStats.IncreaseBy(Stats.StatsNames.Programming, skillGain);
+
+
+
+
+        }
         public void ToFreelance()
         {
             var t = Task<int>.Factory.StartNew(() =>
@@ -70,17 +113,22 @@ namespace SimulatorIOSDeveloper
             });
             t.Wait();
 
+
             if (t.Result < this.CharacterStats.ProgrammingValue)
             {
                 int moneyGain = rnd.Next(1, 5) * this.CharacterStats.ProgrammingValue;
-                int skillGain = rnd.Next(1, 3) * this.CharacterStats.ProgrammingValue/2;
+                int skillGain = rnd.Next(1, 3);
                 this.Money += moneyGain;
                 this.CharacterStats.IncreaseBy(Stats.StatsNames.Programming, skillGain);
                 this.CharacterStats.DecreaseBy(Stats.StatsNames.Social, 1);
                 // to add sound
                 MessageBox.Show(String.Format("Money Gain - {0}\nSkill Point Gain - {1}", moneyGain, skillGain), "Success!");
             }
-            else MessageBox.Show("Unlucky you cannot find a project that you can do properly %(", "Dayum!");
+            else
+            {
+                MessageBox.Show("Unlucky you cannot find a project that you can do properly %(", "Dayum!");
+            }
+            t.Dispose();
         }
 
         // to do it from file someday
@@ -133,7 +181,7 @@ namespace SimulatorIOSDeveloper
                     int randomedGenre = rnd.Next(0, dict.Count);
                     this.CharacterStats.IncreaseBy(Stats.StatsNames.Social, socialGain);
                     finalStr += String.Format("You`ve met a cool hipster girl. ");
-                    finalStr += String.Format("She told you about new  genre - {0}. {1} ", dict.ElementAt(randomedGenre).Key, dict.ElementAt(randomedGenre).Value);
+                    finalStr += String.Format("She told you about new music genre - {0}. {1} ", dict.ElementAt(randomedGenre).Key, dict.ElementAt(randomedGenre).Value);
                     finalStr += String.Format("\nSocial skills increased by {0}.\n", socialGain);
                 }
                 finalStr += String.Format("Health increased by {0}.\n", healthGain);
