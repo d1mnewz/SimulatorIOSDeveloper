@@ -8,6 +8,7 @@ namespace SimulatorIOSDeveloper
     {
         // to add tooltips on actions & stats
             Character obj = new Character();
+            static int counter = 0;
             
 
         private List<String> quotes = new List<String>(); // to do
@@ -25,15 +26,21 @@ namespace SimulatorIOSDeveloper
             this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
             this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
             this.ProgrammingBar.Value = this.obj.CharacterStats.ProgrammingValue;
+            this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
+            
             this.DeviceListBox.SelectedIndex = 0;
             
         }
 
 
-       
 
-        
 
+
+        public void UpdateCounter()
+        {
+            counter++;
+            this.TurnsCountValue.Text = Convert.ToString(counter);
+        }
         private void DeviceListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -56,17 +63,21 @@ namespace SimulatorIOSDeveloper
 
         private void AppleLogoBox_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("http://whyapplesucks.tumblr.com/");
+            System.Diagnostics.Process.Start("https://www.reddit.com/r/MacSucks/comments/28docp/25_year_former_mac_user_says_apple_sucks_and_why/");
         }
 
         private void MusicPanel_Click(object sender, EventArgs e)
         {
             // to do
+            //this. 
+            this.UpdateCounter();
         }
 
         private void SwiftPanel_Click(object sender, EventArgs e)
         {
             // to do
+            this.UpdateCounter();
+
         }
 
         private void SmootheyPanel_Click(object sender, EventArgs e)
@@ -76,10 +87,16 @@ namespace SimulatorIOSDeveloper
             this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
             this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
             this.MoneyLabelSet.Text = obj.Money + "$";
+            this.UpdateCounter();
+
         }
 
         private void YoutubePanel_Click(object sender, EventArgs e)
         {
+
+
+            this.UpdateCounter();
+
             // to do
         }
 
@@ -89,11 +106,15 @@ namespace SimulatorIOSDeveloper
             this.MoneyLabelSet.Text = obj.Money + "$";
             this.ProgrammingBar.Value = obj.CharacterStats.ProgrammingValue;
             this.SocialBar.Value = obj.CharacterStats.SocialValue;
+            this.UpdateCounter();
+
         }
 
         private void SafariPanel_Click(object sender, EventArgs e)
         {
             // to do
+            this.UpdateCounter();
+
         }
 
         private void ShopPanel_Click(object sender, EventArgs e)
@@ -104,15 +125,19 @@ namespace SimulatorIOSDeveloper
 
         private void BikePanel_Click(object sender, EventArgs e)
         {
+            this.UpdateCounter();
 
             // to do
         }
 
+        private void AppleLogoBox_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
 
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
 
-
-       
-
+        }
     }
 }

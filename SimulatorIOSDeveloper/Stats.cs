@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using System.Windows.Forms;
 
 namespace SimulatorIOSDeveloper
 {
@@ -10,6 +10,7 @@ namespace SimulatorIOSDeveloper
         public int SocialValue;
         public int HealthValue;
         public int ProgrammingValue;
+        public int MoodValue;
         // to add some more stats
 
         public Stats()
@@ -17,11 +18,12 @@ namespace SimulatorIOSDeveloper
             this.SocialValue = 50;
             this.ProgrammingValue = 12;
             this.HealthValue = 90;
+            this.MoodValue = 80;
 
         }
         public enum StatsNames
         {
-            Social, Health, Programming
+            Social, Health, Programming, Mood
         };
         public void IncreaseBy(StatsNames stat, int value)
         {
@@ -46,10 +48,17 @@ namespace SimulatorIOSDeveloper
                     {
                         this.SocialValue += value;
                     }
-                    else this.ProgrammingValue = 100;
+                    else this.SocialValue = 100;
+                    break;
+                case StatsNames.Mood:
+                    if (this.MoodValue + value <= 100)
+                    {
+                        this.MoodValue += value;
+                    }
+                    else this.MoodValue = 100;
                     break;
                 default:
-                    System.Windows.Forms.MessageBox.Show("undefined error");
+                    MessageBox.Show("undefined error");
                     break;
             }
       

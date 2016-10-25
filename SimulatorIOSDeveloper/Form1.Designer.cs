@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.VisualizationBox = new System.Windows.Forms.GroupBox();
             this.StatusGBox = new System.Windows.Forms.GroupBox();
+            this.TurnsCountValue = new System.Windows.Forms.Label();
+            this.TurnsCountLabel = new System.Windows.Forms.Label();
             this.NameLabel = new System.Windows.Forms.Label();
             this.MoneyLabelSet = new System.Windows.Forms.Label();
             this.MoneyLabel = new System.Windows.Forms.Label();
@@ -69,6 +72,9 @@
             this.SocialLabel = new System.Windows.Forms.Label();
             this.AppleLogoBox = new System.Windows.Forms.Panel();
             this.MainControl = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.MoodBar = new System.Windows.Forms.ProgressBar();
+            this.MoodLabel = new System.Windows.Forms.Label();
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
@@ -87,6 +93,8 @@
             // 
             // StatusGBox
             // 
+            this.StatusGBox.Controls.Add(this.TurnsCountValue);
+            this.StatusGBox.Controls.Add(this.TurnsCountLabel);
             this.StatusGBox.Controls.Add(this.NameLabel);
             this.StatusGBox.Controls.Add(this.MoneyLabelSet);
             this.StatusGBox.Controls.Add(this.MoneyLabel);
@@ -94,10 +102,28 @@
             this.StatusGBox.Controls.Add(this.StatusLabel);
             this.StatusGBox.Location = new System.Drawing.Point(65, 12);
             this.StatusGBox.Name = "StatusGBox";
-            this.StatusGBox.Size = new System.Drawing.Size(135, 76);
+            this.StatusGBox.Size = new System.Drawing.Size(135, 105);
             this.StatusGBox.TabIndex = 0;
             this.StatusGBox.TabStop = false;
             this.StatusGBox.Text = "Status";
+            // 
+            // TurnsCountValue
+            // 
+            this.TurnsCountValue.AutoSize = true;
+            this.TurnsCountValue.Location = new System.Drawing.Point(44, 71);
+            this.TurnsCountValue.Name = "TurnsCountValue";
+            this.TurnsCountValue.Size = new System.Drawing.Size(13, 13);
+            this.TurnsCountValue.TabIndex = 7;
+            this.TurnsCountValue.Text = "0";
+            // 
+            // TurnsCountLabel
+            // 
+            this.TurnsCountLabel.AutoSize = true;
+            this.TurnsCountLabel.Location = new System.Drawing.Point(6, 71);
+            this.TurnsCountLabel.Name = "TurnsCountLabel";
+            this.TurnsCountLabel.Size = new System.Drawing.Size(37, 13);
+            this.TurnsCountLabel.TabIndex = 6;
+            this.TurnsCountLabel.Text = "Turns:";
             // 
             // NameLabel
             // 
@@ -394,15 +420,17 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.MoodLabel);
+            this.groupBox2.Controls.Add(this.MoodBar);
             this.groupBox2.Controls.Add(this.ProgrammingBar);
             this.groupBox2.Controls.Add(this.HealthBar);
             this.groupBox2.Controls.Add(this.SocialBar);
             this.groupBox2.Controls.Add(this.ProgrammingLabel);
             this.groupBox2.Controls.Add(this.HealthLabel);
             this.groupBox2.Controls.Add(this.SocialLabel);
-            this.groupBox2.Location = new System.Drawing.Point(7, 94);
+            this.groupBox2.Location = new System.Drawing.Point(7, 123);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(193, 204);
+            this.groupBox2.Size = new System.Drawing.Size(193, 175);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Stats";
@@ -432,7 +460,7 @@
             // ProgrammingLabel
             // 
             this.ProgrammingLabel.AutoSize = true;
-            this.ProgrammingLabel.Location = new System.Drawing.Point(5, 78);
+            this.ProgrammingLabel.Location = new System.Drawing.Point(5, 76);
             this.ProgrammingLabel.Name = "ProgrammingLabel";
             this.ProgrammingLabel.Size = new System.Drawing.Size(68, 13);
             this.ProgrammingLabel.TabIndex = 8;
@@ -463,9 +491,10 @@
             this.AppleLogoBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AppleLogoBox.Location = new System.Drawing.Point(7, 12);
             this.AppleLogoBox.Name = "AppleLogoBox";
-            this.AppleLogoBox.Size = new System.Drawing.Size(52, 76);
+            this.AppleLogoBox.Size = new System.Drawing.Size(52, 105);
             this.AppleLogoBox.TabIndex = 0;
             this.AppleLogoBox.Click += new System.EventHandler(this.AppleLogoBox_Click);
+            this.AppleLogoBox.Paint += new System.Windows.Forms.PaintEventHandler(this.AppleLogoBox_Paint);
             // 
             // MainControl
             // 
@@ -476,6 +505,26 @@
             this.MainControl.Name = "MainControl";
             this.MainControl.Size = new System.Drawing.Size(72, 69);
             this.MainControl.TabIndex = 1;
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // MoodBar
+            // 
+            this.MoodBar.Location = new System.Drawing.Point(87, 101);
+            this.MoodBar.Name = "MoodBar";
+            this.MoodBar.Size = new System.Drawing.Size(100, 23);
+            this.MoodBar.TabIndex = 6;
+            // 
+            // MoodLabel
+            // 
+            this.MoodLabel.AutoSize = true;
+            this.MoodLabel.Location = new System.Drawing.Point(5, 103);
+            this.MoodLabel.Name = "MoodLabel";
+            this.MoodLabel.Size = new System.Drawing.Size(34, 13);
+            this.MoodLabel.TabIndex = 12;
+            this.MoodLabel.Text = "Mood";
             // 
             // MainForm
             // 
@@ -552,6 +601,11 @@
         private System.Windows.Forms.Label DYearLabel;
         private System.Windows.Forms.Label DYearLabelSet;
         public System.Windows.Forms.ProgressBar SocialBar;
+        private System.Windows.Forms.Label TurnsCountValue;
+        private System.Windows.Forms.Label TurnsCountLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Label MoodLabel;
+        private System.Windows.Forms.ProgressBar MoodBar;
     }
 }
 
