@@ -15,7 +15,7 @@ namespace SimulatorIOSDeveloper
         public double Money;
         public String CurrentStatus;
         public List<Device> CurrentDevices;
-        private Random rnd = new Random();
+        public Random rnd = new Random();
         public Character()
         {
             this.Money = 10;

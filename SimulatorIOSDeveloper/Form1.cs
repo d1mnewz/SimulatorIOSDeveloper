@@ -29,11 +29,23 @@ namespace SimulatorIOSDeveloper
             this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
             
             this.DeviceListBox.SelectedIndex = 0;
-            
+            InitQuotes();
+            SetRandomQuote();
         }
 
+        public void SetRandomQuote()
+        {
+            this.QuoteLabel.Text = quotes.Count > 0 ? quotes[this.obj.rnd.Next(0, quotes.Count)] : "Sometimes quotes aren`t worth it.";
+        }
 
-
+        public void InitQuotes()
+        {
+            this.quotes.Add("Sometimes life hits you in the head with a brick. Don't lose faith.");
+            this.quotes.Add("Innovation distinguishes between a leader and a follower.");
+            this.quotes.Add("Be a yardstick of quality. Some people aren't used to an environment where excellence is expected.");
+            this.quotes.Add("Design is not just what it looks like and feels like. Design is how it works.");
+            this.quotes.Add("I want to put a ding in the universe.");
+        }
 
 
         public void UpdateCounter()
