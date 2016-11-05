@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("10");
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("1");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("2");
             this.ProductsBox = new System.Windows.Forms.GroupBox();
             this.StoreBox = new System.Windows.Forms.GroupBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.ProductsBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProductsBox
             // 
+            this.ProductsBox.Controls.Add(this.listView1);
             this.ProductsBox.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.ProductsBox.Location = new System.Drawing.Point(12, 12);
             this.ProductsBox.Name = "ProductsBox";
@@ -53,6 +59,18 @@
             this.StoreBox.Text = "Store Home";
             this.StoreBox.Enter += new System.EventHandler(this.StoreBox_Enter);
             // 
+            // listView1
+            // 
+            this.listView1.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2,
+            listViewItem3});
+            this.listView1.Location = new System.Drawing.Point(3, 16);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(121, 97);
+            this.listView1.TabIndex = 0;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
             // ShopForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -65,6 +83,7 @@
             this.MinimizeBox = false;
             this.Name = "ShopForm";
             this.Text = "ShopForm";
+            this.ProductsBox.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -73,5 +92,6 @@
 
         private System.Windows.Forms.GroupBox ProductsBox;
         private System.Windows.Forms.GroupBox StoreBox;
+        private System.Windows.Forms.ListView listView1;
     }
 }

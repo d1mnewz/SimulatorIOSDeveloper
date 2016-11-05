@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SimulatorIOSDeveloper.Properties {
-    using System;
-    
-    
+namespace SimulatorIOSDeveloper.Properties
+{
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>

@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms;
+using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+
 namespace SimulatorIOSDeveloper
 {
     // to make save game in file
     // load
     // but encryption to avoid cheating
+    // to make a dependency with being able to work and health & mood stats
     public class Character
     {
         public String Name;
@@ -84,7 +87,7 @@ namespace SimulatorIOSDeveloper
                     skillGain = 4;
                     break;
                 case 42:
-                    MessageBox.Show("You found the answer to life the universe and everything!", "WOW!");
+                    MessageBox.Show("You found the answer to life the universe and everything!", "42!");
                     skillGain = 5;
                     break;
                 case 77 :
@@ -162,14 +165,16 @@ namespace SimulatorIOSDeveloper
 
             return res;
         }
-        // to do stats gain or deacreases as flying pluses or minuses via pictures
+        // to replace string format to string builder
+        
+       // to do stats gain or deacreases as flying pluses or minuses via pictureboxes
         public void ToDrinkSmoothie()
         {
             int socialGain = rnd.Next(1, 3);
             int healthGain = rnd.Next(1, 2);
             int moodGain = rnd.Next(1, 2);
 
-            String finalStr = "";
+            StringBuilder sb = new StringBuilder();
             bool enoughMoney = this.PayMoney(3);
             if (enoughMoney)
             {
@@ -180,13 +185,13 @@ namespace SimulatorIOSDeveloper
                     var dict = GenerateGenres();
                     int randomedGenre = rnd.Next(0, dict.Count);
                     this.CharacterStats.IncreaseBy(Stats.StatsNames.Social, socialGain);
-                    finalStr += String.Format("You`ve met a cool hipster girl. ");
-                    finalStr += String.Format("She told you about new music genre - {0}. {1} ", dict.ElementAt(randomedGenre).Key, dict.ElementAt(randomedGenre).Value);
-                    finalStr += String.Format("\nSocial skills increased by {0}.\n", socialGain);
+                    sb.AppendLine("You`ve met a cool hipster girl. ");
+                    sb.AppendFormat("She told you about new music genre - {0}. {1} ", dict.ElementAt(randomedGenre).Key, dict.ElementAt(randomedGenre).Value);
+                    sb.AppendFormat("\nSocial skills increased by {0}.\n", socialGain);
                 }
-                finalStr += String.Format("Health increased by {0}.\n", healthGain);
-                finalStr += String.Format("Current Mood increased by {0}.", moodGain);
-                MessageBox.Show(finalStr, "Worth it!");
+                sb.AppendFormat("Health increased by {0}.\n", healthGain);
+                sb.AppendFormat("Current Mood increased by {0}.", moodGain);
+                MessageBox.Show(sb.ToString(), "Worth it!");
             }
             else MessageBox.Show("Not enough money.", "WTF?");
         }

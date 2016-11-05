@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="SimulatorIOSDeveloper.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="SimulatorIOSDeveloper.exe" version="1.0.0.0" publicKeyToken="efb0a5a0d4e2d417" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="apple.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulatorIOSDeveloper.exe" size="379344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulatorIOSDeveloper.exe" size="378320">
       <assemblyIdentity name="SimulatorIOSDeveloper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9jKLh18/DAjvCigUlk50aWySB94xyPJjfklCPkAl0tA=</dsig:DigestValue>
+        <dsig:DigestValue>z+0TwGeWBgW3qEUHzRs7pxY+sMa7CSZIUcJ4Y8OIVgA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -70,24 +70,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>xwSYv8b4AnEGWFxn1g9UqaPTLMZt4wlCJN03BBc3lyQ=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="minus.png" size="7950">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>eDpqOF34/GKeUOTo6OjGeatzbjG2sHZrf058zzvuyWE=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="plus.png" size="5338">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>aSPZ2ouLcjB3RW/luyBKl31xdu8DdbJXUYAYAurVn1I=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\1434996991_41_itunes.png" size="6865">
@@ -117,24 +99,6 @@
       <dsig:DigestValue>lfr5OL8/21vbsFrOhfyvzr7w8Y30t9yjhqF70Fye840=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\minus.png" size="4562">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sBr2OLf0DcfNG5w/G20notkBLMbREEh7S8T/qP6Rcnw=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Resources\plus.png" size="813">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>vnbyP4PiWXOrPrWO4GauN497aVQU4TCbSCAE1TvWTuk=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Resources\raphael_ios_simple-black_128x128.png" size="2315">
     <hash>
       <dsig:Transforms>
@@ -162,15 +126,6 @@
       <dsig:DigestValue>B8McHENmpZmFPqIdc6fytD465dz8NQJkHMNXYB+HTVc=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\symbol_add.png" size="1046">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>isA0ghQBIo0T0VwXXtcbMFjvrF291zAe3xPGoIDR5RU=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="SimulatorIOSDeveloper.exe.config" size="187">
     <hash>
       <dsig:Transforms>
@@ -180,4 +135,4 @@
       <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
     </hash>
   </file>
-</asmv1:assembly>
+<publisherIdentity name="CN=dielast-pc\dielast" issuerKeyHash="12c0c55be9fe64ab1bd4c1e6cf727bbeef1a264d" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>rDv4paB4FExxwOWHJH2gduZPfF4PXd24mCHmrZ661Go=</DigestValue></Reference></SignedInfo><SignatureValue>UxLab5gdTx56D+Tk9VZ8xwmQG26U3aySIIdR9HKmnELmtaKRO3OY9OtLRh346tDzgSn5FHcrE5EQdmRqnRtsJe6LKGn5QX6JqOnzeQsWwu5PuSl/+T6BsScTFPjNUpsdGsSc53CByNvgC82oWLkcduJIeI2E1pnVu/7yaHXfV4k=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>t7o0O/w+zShgBMkPgznOJDQsrSiEgsV5UO84QICbP/RF+nnwlOW85X3Tp7vLbdxs2yr4sJuwTmG6MwMayTiqbEJZz262XVXkEhKsaOjTrW9jXebx6J277jbYOf3oM++A4ZyH7VYqdoKpMH1N3ZajaAbveZOEppZ5/y6ziwppVn0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="6ad4ba9eade62198b8dd5d0f5e7c4fe676a07d2487e5c0714c1478a0a5f83bac" Description="" Url=""><as:assemblyIdentity name="SimulatorIOSDeveloper.exe" version="1.0.0.0" publicKeyToken="efb0a5a0d4e2d417" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=dielast-pc\dielast</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>j5L3SPNgr8Gllm2DFGi9dBLObi9vwMdvFOPLy6JuW38=</DigestValue></Reference></SignedInfo><SignatureValue>JKK92exkPM5mSuEgH1xDPgv4YizSuUgBTjLDiKcZgwDfWboVcyHc8C8o2DmkWt23cxGRRtD6TvvJBof5nOtzYP7fONID15NKAOIgOmiXg2k2qlTedm70kXYAdVeGilLfyzx1EJ3PRALJxJ60FRPv0xk/b5wZ9haJGiZfByeQ0W4=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>t7o0O/w+zShgBMkPgznOJDQsrSiEgsV5UO84QICbP/RF+nnwlOW85X3Tp7vLbdxs2yr4sJuwTmG6MwMayTiqbEJZz262XVXkEhKsaOjTrW9jXebx6J277jbYOf3oM++A4ZyH7VYqdoKpMH1N3ZajaAbveZOEppZ5/y6ziwppVn0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB4TCCAUqgAwIBAgIQYsqA//9ZDZdMj9i7cVftlDANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDHiQAZABpAGUAbABhAHMAdAAtAHAAYwBcAGQAaQBlAGwAYQBzAHQwHhcNMTYxMDMxMTIzNTIzWhcNMTcxMDMxMTgzNTIzWjAvMS0wKwYDVQQDHiQAZABpAGUAbABhAHMAdAAtAHAAYwBcAGQAaQBlAGwAYQBzAHQwgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBALe6NDv8Ps0oYATJD4M5ziQ0LK0ohILFeVDvOECAmz/0Rfp58JTlvOV906e7y23cbNsq+LCbsE5hujMDGsk4qmxCWc9utl1V5BISrGjo061vY13m8eidu+422Dn96DPvgOGch+1WKnaCqTB9Td2Wo2gG73mThKaWef8us4sKaVZ9AgMBAAEwDQYJKoZIhvcNAQELBQADgYEAUgiBR7ydoyCGTqfxJhZAQxX9CBT6lUkCK1FDMINWPpLmjznxKMU7v7q4MEeYmV2rHxzbWkafctcuJaFz8bsvL4XoouBJeBDN2I6ugJ9Ix3712+FuLPFL6xRbl8K+5aAQY3QdXgoX7NaSI8UGKTJwl/idJoE/eQfGxTPItz2KTj4=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

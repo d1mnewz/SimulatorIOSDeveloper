@@ -63,7 +63,9 @@
             this.QuoteLabel = new System.Windows.Forms.Label();
             this.QuoteBox = new System.Windows.Forms.GroupBox();
             this.QuotePicture = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.StatsBox = new System.Windows.Forms.GroupBox();
+            this.MoodLabel = new System.Windows.Forms.Label();
+            this.MoodBar = new System.Windows.Forms.ProgressBar();
             this.ProgrammingBar = new System.Windows.Forms.ProgressBar();
             this.HealthBar = new System.Windows.Forms.ProgressBar();
             this.SocialBar = new System.Windows.Forms.ProgressBar();
@@ -73,13 +75,11 @@
             this.AppleLogoBox = new System.Windows.Forms.Panel();
             this.MainControl = new System.Windows.Forms.Panel();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.MoodBar = new System.Windows.Forms.ProgressBar();
-            this.MoodLabel = new System.Windows.Forms.Label();
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
             this.QuoteBox.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.StatsBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // VisualizationBox
@@ -413,27 +413,45 @@
             // 
             this.QuotePicture.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources.steve_jobs;
             this.QuotePicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.QuotePicture.Cursor = System.Windows.Forms.Cursors.Hand;
             this.QuotePicture.Location = new System.Drawing.Point(7, 13);
             this.QuotePicture.Name = "QuotePicture";
             this.QuotePicture.Size = new System.Drawing.Size(98, 99);
             this.QuotePicture.TabIndex = 2;
+            this.QuotePicture.Click += new System.EventHandler(this.QuotePicture_Click);
             // 
-            // groupBox2
+            // StatsBox
             // 
-            this.groupBox2.Controls.Add(this.MoodLabel);
-            this.groupBox2.Controls.Add(this.MoodBar);
-            this.groupBox2.Controls.Add(this.ProgrammingBar);
-            this.groupBox2.Controls.Add(this.HealthBar);
-            this.groupBox2.Controls.Add(this.SocialBar);
-            this.groupBox2.Controls.Add(this.ProgrammingLabel);
-            this.groupBox2.Controls.Add(this.HealthLabel);
-            this.groupBox2.Controls.Add(this.SocialLabel);
-            this.groupBox2.Location = new System.Drawing.Point(7, 123);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(193, 175);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Stats";
+            this.StatsBox.Controls.Add(this.MoodLabel);
+            this.StatsBox.Controls.Add(this.MoodBar);
+            this.StatsBox.Controls.Add(this.ProgrammingBar);
+            this.StatsBox.Controls.Add(this.HealthBar);
+            this.StatsBox.Controls.Add(this.SocialBar);
+            this.StatsBox.Controls.Add(this.ProgrammingLabel);
+            this.StatsBox.Controls.Add(this.HealthLabel);
+            this.StatsBox.Controls.Add(this.SocialLabel);
+            this.StatsBox.Location = new System.Drawing.Point(7, 123);
+            this.StatsBox.Name = "StatsBox";
+            this.StatsBox.Size = new System.Drawing.Size(193, 175);
+            this.StatsBox.TabIndex = 5;
+            this.StatsBox.TabStop = false;
+            this.StatsBox.Text = "Stats";
+            // 
+            // MoodLabel
+            // 
+            this.MoodLabel.AutoSize = true;
+            this.MoodLabel.Location = new System.Drawing.Point(5, 103);
+            this.MoodLabel.Name = "MoodLabel";
+            this.MoodLabel.Size = new System.Drawing.Size(34, 13);
+            this.MoodLabel.TabIndex = 12;
+            this.MoodLabel.Text = "Mood";
+            // 
+            // MoodBar
+            // 
+            this.MoodBar.Location = new System.Drawing.Point(87, 101);
+            this.MoodBar.Name = "MoodBar";
+            this.MoodBar.Size = new System.Drawing.Size(100, 23);
+            this.MoodBar.TabIndex = 6;
             // 
             // ProgrammingBar
             // 
@@ -510,29 +528,13 @@
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
-            // MoodBar
-            // 
-            this.MoodBar.Location = new System.Drawing.Point(87, 101);
-            this.MoodBar.Name = "MoodBar";
-            this.MoodBar.Size = new System.Drawing.Size(100, 23);
-            this.MoodBar.TabIndex = 6;
-            // 
-            // MoodLabel
-            // 
-            this.MoodLabel.AutoSize = true;
-            this.MoodLabel.Location = new System.Drawing.Point(5, 103);
-            this.MoodLabel.Name = "MoodLabel";
-            this.MoodLabel.Size = new System.Drawing.Size(34, 13);
-            this.MoodLabel.TabIndex = 12;
-            this.MoodLabel.Text = "Mood";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.ClientSize = new System.Drawing.Size(634, 413);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.StatsBox);
             this.Controls.Add(this.QuoteBox);
             this.Controls.Add(this.AppleLogoBox);
             this.Controls.Add(this.MainControl);
@@ -553,8 +555,8 @@
             this.DevicesBox.PerformLayout();
             this.WhatToDoBox.ResumeLayout(false);
             this.QuoteBox.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.StatsBox.ResumeLayout(false);
+            this.StatsBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -581,7 +583,7 @@
         private System.Windows.Forms.Panel QuotePicture;
         private System.Windows.Forms.Label QuoteLabel;
         private System.Windows.Forms.GroupBox QuoteBox;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox StatsBox;
         private System.Windows.Forms.Label HealthLabel;
         private System.Windows.Forms.Label SocialLabel;
         private System.Windows.Forms.Label ProgrammingLabel;

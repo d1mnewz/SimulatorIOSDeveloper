@@ -1,7 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Windows.Forms;
+using System.Diagnostics.Contracts;
+using System.Drawing;
 using System.Linq;
+using System.Windows.Forms;
+using static SimulatorIOSDeveloper.Stats;
+using System.Linq;
+
 namespace SimulatorIOSDeveloper
 {
     public partial class MainForm : Form
@@ -9,12 +14,61 @@ namespace SimulatorIOSDeveloper
         // to add tooltips on actions & stats
             Character obj = new Character();
             static int counter = 0;
+
+        // to name properly after finishing
+        PictureBox p = new PictureBox();
+
+        // to do!!
+        private void ImageTest()
+        {
+            Image image = Image.FromFile(@"H:\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\Resources\symbol_add.png");
+            p.Image = image;
+            //p.LoadAsync();
+            p.Height = image.Height;
+            p.Width = image.Width;
+            p.Location = new Point(this.HealthBar.Location.X + this.HealthBar.Size.Width - this.HealthBar.Margin.Right - this.p.Width, 0);
+            p.BackColor = Color.Transparent;
+            this.StatsBox.Controls.Add(p);
+            p.BringToFront();
             
 
+            // p.Image = Image.FromFile();
+
+        }
+        private void ChangeStat(StatsNames stat, int value )
+        {
+            // some defensive programming
+           // p.Update();
+            Contract.Requires(value >= 0 && value <= 100, "invalid value");
+
+            switch (stat)
+            {
+                case StatsNames.Health:
+                    this.HealthBar.Value = value;
+                    break;
+                case StatsNames.Mood:
+                    this.MoodBar.Value = value;
+                    break;
+                case StatsNames.Programming:
+                    this.ProgrammingBar.Value = value;
+                    break;
+                case StatsNames.Social:
+                    this.SocialBar.Value = value;
+                    break;
+            }
+        }
         private List<String> quotes = new List<String>(); // to do
         public MainForm()
         {
             InitializeComponent();
+            InitFromObj(obj);
+            this.DeviceListBox.SelectedIndex = 0;
+            InitQuotes();
+            SetRandomQuote();
+            this.ImageTest();
+        }
+        private void InitFromObj(Character obj)
+        {
             this.MoneyLabelSet.Text = this.obj.Money + "$";
             this.StatusLabelSet.Text = this.obj.CurrentStatus;
             this.NameLabel.Text = String.Format("what`s up, {0}?", this.obj.Name);
@@ -23,28 +77,26 @@ namespace SimulatorIOSDeveloper
             {
                 this.DeviceListBox.Items.Add(el.Name);
             }
-            this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
-            this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
-            this.ProgrammingBar.Value = this.obj.CharacterStats.ProgrammingValue;
-            this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
-            
-            this.DeviceListBox.SelectedIndex = 0;
-            InitQuotes();
-            SetRandomQuote();
-        }
+            this.UpdateStats();
 
-        public void SetRandomQuote()
+        }
+        private void SetRandomQuote()
         {
             this.QuoteLabel.Text = quotes.Count > 0 ? quotes[this.obj.rnd.Next(0, quotes.Count)] : "Sometimes quotes aren`t worth it.";
         }
 
-        public void InitQuotes()
+        private void InitQuotes()
         {
             this.quotes.Add("Sometimes life hits you in the head with a brick. Don't lose faith.");
             this.quotes.Add("Innovation distinguishes between a leader and a follower.");
             this.quotes.Add("Be a yardstick of quality. Some people aren't used to an environment where excellence is expected.");
             this.quotes.Add("Design is not just what it looks like and feels like. Design is how it works.");
             this.quotes.Add("I want to put a ding in the universe.");
+            this.quotes.Add("Quality is much better than quantity. One home run is much better than two doubles.");
+            this.quotes.Add("Don’t let the noise of other’s’ opinions drown out your own inner voice.");
+            this.quotes.Add("Stay hungry. Stay foolish.");
+           
+            
         }
 
 
@@ -58,12 +110,12 @@ namespace SimulatorIOSDeveloper
             this.MoneyLabelSet.Text = obj.Money + "$";
 
         }
-        public void UpdateSkills()
+        public void UpdateStats()
         {
-            this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
-            this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
-            this.ProgrammingBar.Value = this.obj.CharacterStats.ProgrammingValue;
-            this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
+            this.ChangeStat(StatsNames.Social, obj.CharacterStats.SocialValue);
+            this.ChangeStat(StatsNames.Health, obj.CharacterStats.HealthValue);
+            this.ChangeStat(StatsNames.Mood, obj.CharacterStats.MoodValue);
+            this.ChangeStat(StatsNames.Programming, obj.CharacterStats.ProgrammingValue);
         }
         private void DeviceListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -95,7 +147,7 @@ namespace SimulatorIOSDeveloper
             // to do
             //this. 
             this.obj.ListenMusic();
-            UpdateSkills();
+            UpdateStats();
             this.UpdateCounter();
         }
 
@@ -103,7 +155,7 @@ namespace SimulatorIOSDeveloper
         {
             // to do
             obj.ToCodeSwift();
-            this.UpdateSkills();
+            this.UpdateStats();
             this.UpdateMoney();
             this.UpdateCounter();
 
@@ -157,7 +209,7 @@ namespace SimulatorIOSDeveloper
         {
             this.UpdateCounter();
 
-            // to do
+            // to do mini game with graphics?
         }
 
         private void AppleLogoBox_Paint(object sender, PaintEventArgs e)
@@ -169,5 +221,14 @@ namespace SimulatorIOSDeveloper
         {
 
         }
+
+        private void QuotePicture_Click(object sender, EventArgs e)
+        {
+            SetRandomQuote();
+        }
+
+        // onlick create textbox where you enter your name;
+        // enter - confirm & close text box
+        // esc - cancel & leave the name as it was before
     }
 }
