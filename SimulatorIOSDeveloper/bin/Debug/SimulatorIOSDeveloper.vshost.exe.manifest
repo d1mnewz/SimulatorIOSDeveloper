@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulatorIOSDeveloper.exe" size="379344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulatorIOSDeveloper.exe" size="382416">
       <assemblyIdentity name="SimulatorIOSDeveloper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9jKLh18/DAjvCigUlk50aWySB94xyPJjfklCPkAl0tA=</dsig:DigestValue>
+        <dsig:DigestValue>Bkec7vGczzUABR8179/Icks+cUA9+YP7Nt59JboMYCY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -117,13 +117,13 @@
       <dsig:DigestValue>lfr5OL8/21vbsFrOhfyvzr7w8Y30t9yjhqF70Fye840=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Resources\minus.png" size="4562">
+  <file name="Resources\minus.png" size="707">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>sBr2OLf0DcfNG5w/G20notkBLMbREEh7S8T/qP6Rcnw=</dsig:DigestValue>
+      <dsig:DigestValue>LTls9vQn0xUYmKFdy3B2+2UWsyebtZIwfyLMPbOQquc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\plus.png" size="813">

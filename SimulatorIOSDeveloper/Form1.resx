@@ -159,6 +159,36 @@
         haMPmh7QFG0ce1jartBQtl4PdvwD5wcji4UTpXUAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="PlusBox.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAACXBIWXMAAAsPAAALDwGS+QOlAAAABmJL
+        R0QAAAAAAAD5Q7t/AAAAB3RJTUUH4AsFBik7a156fAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxNi0xMS0w
+        NVQwNjo0MTo1OS0wNDowMLvpm9sAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTYtMTEtMDVUMDY6NDE6NTkt
+        MDQ6MDDKtCNnAAADgklEQVRYR+2Wa0iTURjHT7vr5kyz1KK0Is2im9miLzmtma1azmqulqmZds+p0YUS
+        L9g+lFAhYaWWDso2NLyGmrfl7ENEaRdNs/RL+qm+RAYhPT3n1TeGIY5qQuEzfmx73//5n/95eN/DIWSq
+        pjrwz3XAAxNTxGQa8+EgTogQr/EcvJqQfEI+gZGoy6SaA3WLio82rixCiuNqF9zeXipW7GvwIlTjsGLM
+        Iwn3QL3fvcsv90Jhtx4KkIsdGoh54JNTCxmTEEBFuMebAs23epKhrN8Apf0X4EbXEThYvySnH2omLYCp
+        sEePk2czXO86zATog6pJCBBBO7DKXNB9Asx9mQx5XYmQWB+Q8w7KJyGAlglQerP7CNx9f57hWmc8JNYt
+        vvQU8on85l94BEMKCZEXEG6YkTtPeUfor7wjYvFTFHMD9C2yurw3B6GoNwWK3qZAbmccHH64LF9RzFlk
+        o8UxQn/0mC/PJ3z0s7+2mkREWSJYGVs/91WSddVgsnX1AEtq29qBrGfKr1c7oyG3K5bhymsdpD8N+5za
+        Jvupo3q9NXBwf4NvL/rJ8TW1P4C6VEpUZnHoMevSofTnGyCjXYFsHEUBme2bIIvSET4C/s5sD/tFl45j
+        kh6vGI68L9VEVdPdy86iabeZnULjLT5DSU+Wgf7J8t+Cjk1onT8cUSbW7KxytXN2lG0xCYjyHl+mqZV+
+        0DV5DO1t8vhiyz7LrOE4qxfYgte+jdXR/1F1rh+3mAXhqjKR/QHCjByiMHKEm0t4a5QmfggiZwkv4W1Q
+        1zhZd1tcgEXb4gIRlaK7qF9vq6Vj8do69BIj9gcYT0m34iWnCC+iWlSubZGA1jJCVLMEVOVCw/52NxJ8
+        48/nGdeBCXCa8NRjAmgxwHYmgLvjN6LF2IHIaudynWU66B65MexpccUAIkNCx0zHB/A/Q3g7aiSVMa2z
+        INbqyRBt8QB1hbPh0IvZjg/gd5bwdz1wrY5vmwMJj+cxxLV6Q2SlxHDslQ8JxV30b9Q0NKGPLXf0nCPA
+        b3rmcea7kxkqk7giutETYppnU77rGmaC0uiUjffpu0ahev7oWOpBvagnZcJiJ6cHLGpEDek+KkU8Eb+F
+        ak5UUKogLShVmCY7JTwnOyM46buZE4z3vBE3RELD2oShXrZBJgzBCtjUYztCDekK2VWy3WInsV2x3Su3
+        O9WUcKoD/1UHfgAu1tIfNYsW0AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>11, 11</value>
+  </metadata>
+  <metadata name="TimerFadingPlus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>108, 11</value>
+  </metadata>
   <data name="MainControl.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD4AAABACAYAAABC6cT1AAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -255,8 +285,8 @@
         ASIAfLn3YfcaAAAAAElFTkSuQmCC
 </value>
   </data>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>11, 11</value>
+  <metadata name="TimerFadingMinus.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>249, 11</value>
   </metadata>
   <metadata name="$this.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -5,7 +5,6 @@ using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 using static SimulatorIOSDeveloper.Stats;
-using System.Linq;
 
 namespace SimulatorIOSDeveloper
 {
@@ -13,9 +12,11 @@ namespace SimulatorIOSDeveloper
     {
         // to add tooltips on actions & stats
             Character obj = new Character();
-            static int counter = 0;
-
+            static int counter = 0; // count of turns
+            List<String> quotes = new List<String>();
+            bool firstInit = true;
         // to name properly after finishing
+
         PictureBox p = new PictureBox();
 
         // to do!!
@@ -27,6 +28,7 @@ namespace SimulatorIOSDeveloper
             p.Height = image.Height;
             p.Width = image.Width;
             p.Location = new Point(this.HealthBar.Location.X + this.HealthBar.Size.Width - this.HealthBar.Margin.Right - this.p.Width, 0);
+            p.Location = new Point(this.HealthLabel.Location.X + this.HealthLabel.Size.Width, this.HealthLabel.Location.Y);
             p.BackColor = Color.Transparent;
             this.StatsBox.Controls.Add(p);
             p.BringToFront();
@@ -35,29 +37,7 @@ namespace SimulatorIOSDeveloper
             // p.Image = Image.FromFile();
 
         }
-        private void ChangeStat(StatsNames stat, int value )
-        {
-            // some defensive programming
-           // p.Update();
-            Contract.Requires(value >= 0 && value <= 100, "invalid value");
-
-            switch (stat)
-            {
-                case StatsNames.Health:
-                    this.HealthBar.Value = value;
-                    break;
-                case StatsNames.Mood:
-                    this.MoodBar.Value = value;
-                    break;
-                case StatsNames.Programming:
-                    this.ProgrammingBar.Value = value;
-                    break;
-                case StatsNames.Social:
-                    this.SocialBar.Value = value;
-                    break;
-            }
-        }
-        private List<String> quotes = new List<String>(); // to do
+        
         public MainForm()
         {
             InitializeComponent();
@@ -65,7 +45,8 @@ namespace SimulatorIOSDeveloper
             this.DeviceListBox.SelectedIndex = 0;
             InitQuotes();
             SetRandomQuote();
-            this.ImageTest();
+            //this.ImageTest();
+           
         }
         private void InitFromObj(Character obj)
         {
@@ -77,14 +58,122 @@ namespace SimulatorIOSDeveloper
             {
                 this.DeviceListBox.Items.Add(el.Name);
             }
-            this.UpdateStats();
+            this.UpdateAllStats();
+            this.firstInit = false;
 
         }
         private void SetRandomQuote()
         {
             this.QuoteLabel.Text = quotes.Count > 0 ? quotes[this.obj.rnd.Next(0, quotes.Count)] : "Sometimes quotes aren`t worth it.";
         }
+        
+        private void ChangeStat(StatsNames stat, int value)
+        {
+            //this.PlusLabel.Text = "";
+            this.PlusLabel.ForeColor = Color.Black;
+            //this.MinusLabel.Text = "";
+            this.MinusLabel.ForeColor = Color.Black;
+            //bool plus = false;
 
+            // some defensive programming
+
+            Contract.Requires(value >= 0 && value <= 100, "invalid value");
+            
+            switch (stat)
+            {
+                case StatsNames.Health:
+                    if (!this.firstInit)
+                    {
+                        if (this.HealthBar.Value < value)
+                        {
+                            this.PlusBox.Visible = true;
+                            this.PlusLabel.Text = "health";
+                            TimerFadingPlus.Start();
+                        }
+                        else if (this.HealthBar.Value > value)
+                        {
+                            this.MinusLabel.Text = "health";
+                            this.MinusBox.Visible = true;
+                            TimerFadingMinus.Start();
+                        }
+
+                        
+                        
+                       
+                    }
+                    this.HealthBar.Value = value;
+                   
+                    break;
+                case StatsNames.Mood:
+                    if (!this.firstInit)
+                    {
+                        if (this.MoodBar.Value < value)
+                        {
+                            this.PlusLabel.Text = "mood";
+                            this.PlusBox.Visible = true;
+                            TimerFadingPlus.Start();
+
+
+                        }
+                        else if (this.MoodBar.Value > value)
+                        {
+                            this.MinusLabel.Text = "mood";
+                            this.MinusBox.Visible = true;
+                            TimerFadingMinus.Start();
+
+                        }
+
+
+
+                    }
+                    this.MoodBar.Value = value;
+                    break;
+                case StatsNames.Programming:
+                    if (!this.firstInit)
+                        {
+                        if (this.ProgrammingBar.Value < value)
+                        {
+                            this.PlusBox.Visible = true;
+                            this.PlusLabel.Text = "prog";
+                            TimerFadingPlus.Start();
+                        }
+                        else if (this.ProgrammingBar.Value > value)
+                        {
+                            this.MinusBox.Visible = true;
+                            this.MinusLabel.Text = "prog";
+                            TimerFadingMinus.Start();
+
+                        }
+
+                    }
+                    this.ProgrammingBar.Value = value;
+                    break;
+                case StatsNames.Social:
+                    if (!this.firstInit)
+                    {
+                        if (this.SocialBar.Value < value)
+                        {
+                            this.PlusLabel.Text = "soc";
+                            this.PlusBox.Visible = true;
+                            TimerFadingPlus.Start();
+
+
+                        }
+                        else if (this.SocialBar.Value > value)
+                        {
+                            this.MinusLabel.Text = "soc";
+                            this.MinusBox.Visible = true;
+                            TimerFadingMinus.Start();
+
+                        }
+
+                    }
+                    this.SocialBar.Value = value;
+                    break;
+            }
+
+
+        }
         private void InitQuotes()
         {
             this.quotes.Add("Sometimes life hits you in the head with a brick. Don't lose faith.");
@@ -110,7 +199,7 @@ namespace SimulatorIOSDeveloper
             this.MoneyLabelSet.Text = obj.Money + "$";
 
         }
-        public void UpdateStats()
+        public void UpdateAllStats()
         {
             this.ChangeStat(StatsNames.Social, obj.CharacterStats.SocialValue);
             this.ChangeStat(StatsNames.Health, obj.CharacterStats.HealthValue);
@@ -147,7 +236,7 @@ namespace SimulatorIOSDeveloper
             // to do
             //this. 
             this.obj.ListenMusic();
-            UpdateStats();
+            this.ChangeStat(StatsNames.Mood, obj.CharacterStats.MoodValue);
             this.UpdateCounter();
         }
 
@@ -155,7 +244,7 @@ namespace SimulatorIOSDeveloper
         {
             // to do
             obj.ToCodeSwift();
-            this.UpdateStats();
+            this.UpdateAllStats();
             this.UpdateMoney();
             this.UpdateCounter();
 
@@ -165,10 +254,10 @@ namespace SimulatorIOSDeveloper
         {
             // to do
             this.obj.ToDrinkSmoothie();
-            this.HealthBar.Value = this.obj.CharacterStats.HealthValue;
-            this.SocialBar.Value = this.obj.CharacterStats.SocialValue;
-            this.MoodBar.Value = this.obj.CharacterStats.MoodValue;
-            this.MoneyLabelSet.Text = obj.Money + "$";
+            this.ChangeStat(StatsNames.Health, obj.CharacterStats.HealthValue);
+            this.ChangeStat(StatsNames.Social, obj.CharacterStats.SocialValue);
+            this.ChangeStat(StatsNames.Mood, obj.CharacterStats.MoodValue);
+            this.UpdateMoney();
             this.UpdateCounter();
 
         }
@@ -225,6 +314,34 @@ namespace SimulatorIOSDeveloper
         private void QuotePicture_Click(object sender, EventArgs e)
         {
             SetRandomQuote();
+        }
+
+        // only works for black color
+        private void TimerFading_Tick(object sender, EventArgs e)
+        {
+            int fadingSpeed = 15;
+            this.PlusLabel.ForeColor = Color.FromArgb(PlusLabel.ForeColor.R + fadingSpeed, PlusLabel.ForeColor.G + fadingSpeed, this.PlusLabel.ForeColor.B + fadingSpeed);
+
+            if (PlusLabel.ForeColor.R >= this.BackColor.R)
+            {
+                this.TimerFadingPlus.Stop();
+                PlusLabel.ForeColor = this.BackColor;
+                this.PlusLabel.Text = "";
+            }
+            
+        }
+
+        private void TimerFadingMinus_Tick(object sender, EventArgs e)
+        {
+            int fadingSpeed = 15;
+            this.MinusLabel.ForeColor = Color.FromArgb(MinusLabel.ForeColor.R + fadingSpeed, MinusLabel.ForeColor.G + fadingSpeed, this.MinusLabel.ForeColor.B + fadingSpeed);
+
+            if (MinusLabel.ForeColor.R >= this.BackColor.R)
+            {
+                this.TimerFadingMinus.Stop();
+                MinusLabel.ForeColor = this.BackColor;
+                this.MinusLabel.Text = "";
+            }
         }
 
         // onlick create textbox where you enter your name;

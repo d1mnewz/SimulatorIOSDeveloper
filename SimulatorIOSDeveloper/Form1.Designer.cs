@@ -64,6 +64,8 @@
             this.QuoteBox = new System.Windows.Forms.GroupBox();
             this.QuotePicture = new System.Windows.Forms.Panel();
             this.StatsBox = new System.Windows.Forms.GroupBox();
+            this.MinusBox = new System.Windows.Forms.PictureBox();
+            this.PlusBox = new System.Windows.Forms.PictureBox();
             this.MoodLabel = new System.Windows.Forms.Label();
             this.MoodBar = new System.Windows.Forms.ProgressBar();
             this.ProgrammingBar = new System.Windows.Forms.ProgressBar();
@@ -72,14 +74,20 @@
             this.ProgrammingLabel = new System.Windows.Forms.Label();
             this.HealthLabel = new System.Windows.Forms.Label();
             this.SocialLabel = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.TimerFadingPlus = new System.Windows.Forms.Timer(this.components);
             this.AppleLogoBox = new System.Windows.Forms.Panel();
             this.MainControl = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.PlusLabel = new System.Windows.Forms.Label();
+            this.MinusLabel = new System.Windows.Forms.Label();
+            this.TimerFadingMinus = new System.Windows.Forms.Timer(this.components);
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
             this.WhatToDoBox.SuspendLayout();
             this.QuoteBox.SuspendLayout();
             this.StatsBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MinusBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlusBox)).BeginInit();
             this.SuspendLayout();
             // 
             // VisualizationBox
@@ -422,6 +430,10 @@
             // 
             // StatsBox
             // 
+            this.StatsBox.Controls.Add(this.MinusLabel);
+            this.StatsBox.Controls.Add(this.PlusLabel);
+            this.StatsBox.Controls.Add(this.MinusBox);
+            this.StatsBox.Controls.Add(this.PlusBox);
             this.StatsBox.Controls.Add(this.MoodLabel);
             this.StatsBox.Controls.Add(this.MoodBar);
             this.StatsBox.Controls.Add(this.ProgrammingBar);
@@ -436,6 +448,28 @@
             this.StatsBox.TabIndex = 5;
             this.StatsBox.TabStop = false;
             this.StatsBox.Text = "Stats";
+            // 
+            // MinusBox
+            // 
+            this.MinusBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MinusBox.Image = global::SimulatorIOSDeveloper.Properties.Resources.minus;
+            this.MinusBox.Location = new System.Drawing.Point(12, 144);
+            this.MinusBox.Name = "MinusBox";
+            this.MinusBox.Size = new System.Drawing.Size(32, 25);
+            this.MinusBox.TabIndex = 15;
+            this.MinusBox.TabStop = false;
+            this.MinusBox.Visible = false;
+            // 
+            // PlusBox
+            // 
+            this.PlusBox.Image = ((System.Drawing.Image)(resources.GetObject("PlusBox.Image")));
+            this.PlusBox.Location = new System.Drawing.Point(12, 119);
+            this.PlusBox.Name = "PlusBox";
+            this.PlusBox.Size = new System.Drawing.Size(32, 29);
+            this.PlusBox.TabIndex = 14;
+            this.PlusBox.TabStop = false;
+            this.PlusBox.Visible = false;
+            
             // 
             // MoodLabel
             // 
@@ -502,6 +536,14 @@
             this.SocialLabel.TabIndex = 6;
             this.SocialLabel.Text = "Social";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // TimerFadingPlus
+            // 
+            this.TimerFadingPlus.Tick += new System.EventHandler(this.TimerFading_Tick);
+            // 
             // AppleLogoBox
             // 
             this.AppleLogoBox.BackgroundImage = global::SimulatorIOSDeveloper.Properties.Resources._1434995918_ios;
@@ -524,9 +566,29 @@
             this.MainControl.Size = new System.Drawing.Size(72, 69);
             this.MainControl.TabIndex = 1;
             // 
-            // toolTip1
+            // PlusLabel
             // 
-            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            this.PlusLabel.AutoSize = true;
+            this.PlusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlusLabel.Location = new System.Drawing.Point(84, 127);
+            this.PlusLabel.Name = "PlusLabel";
+            this.PlusLabel.Size = new System.Drawing.Size(40, 16);
+            this.PlusLabel.TabIndex = 16;
+            this.PlusLabel.Text = "____";
+            // 
+            // MinusLabel
+            // 
+            this.MinusLabel.AutoSize = true;
+            this.MinusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinusLabel.Location = new System.Drawing.Point(84, 152);
+            this.MinusLabel.Name = "MinusLabel";
+            this.MinusLabel.Size = new System.Drawing.Size(56, 16);
+            this.MinusLabel.TabIndex = 17;
+            this.MinusLabel.Text = "______";
+            // 
+            // TimerFadingMinus
+            // 
+            this.TimerFadingMinus.Tick += new System.EventHandler(this.TimerFadingMinus_Tick);
             // 
             // MainForm
             // 
@@ -557,6 +619,8 @@
             this.QuoteBox.ResumeLayout(false);
             this.StatsBox.ResumeLayout(false);
             this.StatsBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MinusBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PlusBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -608,6 +672,12 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Label MoodLabel;
         private System.Windows.Forms.ProgressBar MoodBar;
+        private System.Windows.Forms.PictureBox PlusBox;
+        private System.Windows.Forms.PictureBox MinusBox;
+        private System.Windows.Forms.Label MinusLabel;
+        private System.Windows.Forms.Label PlusLabel;
+        private System.Windows.Forms.Timer TimerFadingPlus;
+        private System.Windows.Forms.Timer TimerFadingMinus;
     }
 }
 
