@@ -16,27 +16,11 @@ namespace SimulatorIOSDeveloper
             List<String> quotes = new List<String>();
             bool firstInit = true;
         // to name properly after finishing
-
-        PictureBox p = new PictureBox();
-
-        // to do!!
-        private void ImageTest()
-        {
-            Image image = Image.FromFile(@"H:\OneDrive\Visual Studio 2012\Projects\SimulatorIOSDeveloper\SimulatorIOSDeveloper\Resources\symbol_add.png");
-            p.Image = image;
-            //p.LoadAsync();
-            p.Height = image.Height;
-            p.Width = image.Width;
-            p.Location = new Point(this.HealthBar.Location.X + this.HealthBar.Size.Width - this.HealthBar.Margin.Right - this.p.Width, 0);
-            p.Location = new Point(this.HealthLabel.Location.X + this.HealthLabel.Size.Width, this.HealthLabel.Location.Y);
-            p.BackColor = Color.Transparent;
-            this.StatsBox.Controls.Add(p);
-            p.BringToFront();
-            
-
-            // p.Image = Image.FromFile();
-
-        }
+        // TODO: validation of data using Contract
+        // TODO: settings form on pressing Home button(also to do it with keyboard HOME)
+        // TODO: separate files: 1. pressing buttuns; 2. function-helpers   
+        // just to do it.
+       
         
         public MainForm()
         {
@@ -45,7 +29,7 @@ namespace SimulatorIOSDeveloper
             this.DeviceListBox.SelectedIndex = 0;
             InitQuotes();
             SetRandomQuote();
-            //this.ImageTest();
+            
            
         }
         private void InitFromObj(Character obj)
@@ -53,7 +37,7 @@ namespace SimulatorIOSDeveloper
             this.MoneyLabelSet.Text = this.obj.Money + "$";
             this.StatusLabelSet.Text = this.obj.CurrentStatus;
             this.NameLabel.Text = String.Format("what`s up, {0}?", this.obj.Name);
-            //this.DeviceListBox.DataSource = MainForm.obj().CurrentDevices;
+            
             foreach (var el in this.obj.CurrentDevices)
             {
                 this.DeviceListBox.Items.Add(el.Name);
@@ -69,13 +53,13 @@ namespace SimulatorIOSDeveloper
         
         private void ChangeStat(StatsNames stat, int value)
         {
-            //this.PlusLabel.Text = "";
+            // TODO: fading of pictureboxes with timer (pref not to create more timers)
+            // TODO: more then one stat on label (maybe create collection of labels? in the way they dont contact each other)
             this.PlusLabel.ForeColor = Color.Black;
-            //this.MinusLabel.Text = "";
             this.MinusLabel.ForeColor = Color.Black;
-            //bool plus = false;
+           
 
-            // some defensive programming
+            // defensive programming
 
             Contract.Requires(value >= 0 && value <= 100, "invalid value");
             
@@ -184,8 +168,6 @@ namespace SimulatorIOSDeveloper
             this.quotes.Add("Quality is much better than quantity. One home run is much better than two doubles.");
             this.quotes.Add("Don’t let the noise of other’s’ opinions drown out your own inner voice.");
             this.quotes.Add("Stay hungry. Stay foolish.");
-           
-            
         }
 
 
@@ -194,6 +176,7 @@ namespace SimulatorIOSDeveloper
             counter++;
             this.TurnsCountValue.Text = Convert.ToString(counter);
         }
+        // to make some action on adding money (sound/image)
         public void UpdateMoney()
         {
             this.MoneyLabelSet.Text = obj.Money + "$";
@@ -223,6 +206,7 @@ namespace SimulatorIOSDeveloper
             {
                 return;
                 // dont do anything
+                // yeah its bad
             }
         }
 
@@ -274,9 +258,11 @@ namespace SimulatorIOSDeveloper
         private void FreelancePanel_Click(object sender, EventArgs e)
         {
             obj.ToFreelance();
-            this.MoneyLabelSet.Text = obj.Money + "$";
-            this.ProgrammingBar.Value = obj.CharacterStats.ProgrammingValue;
-            this.SocialBar.Value = obj.CharacterStats.SocialValue;
+            
+            
+            this.UpdateMoney();
+            this.ChangeStat(StatsNames.Programming, obj.CharacterStats.ProgrammingValue);
+            this.ChangeStat(StatsNames.Social, obj.CharacterStats.SocialValue);
             this.UpdateCounter();
 
         }
