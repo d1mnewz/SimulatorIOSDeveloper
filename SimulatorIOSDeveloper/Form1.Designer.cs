@@ -455,9 +455,8 @@
             this.MinusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MinusLabel.Location = new System.Drawing.Point(84, 152);
             this.MinusLabel.Name = "MinusLabel";
-            this.MinusLabel.Size = new System.Drawing.Size(56, 16);
+            this.MinusLabel.Size = new System.Drawing.Size(0, 16);
             this.MinusLabel.TabIndex = 17;
-            this.MinusLabel.Text = "______";
             // 
             // PlusLabel
             // 
@@ -465,9 +464,8 @@
             this.PlusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlusLabel.Location = new System.Drawing.Point(84, 127);
             this.PlusLabel.Name = "PlusLabel";
-            this.PlusLabel.Size = new System.Drawing.Size(40, 16);
+            this.PlusLabel.Size = new System.Drawing.Size(0, 16);
             this.PlusLabel.TabIndex = 16;
-            this.PlusLabel.Text = "____";
             // 
             // MinusBox
             // 
@@ -478,7 +476,6 @@
             this.MinusBox.Size = new System.Drawing.Size(32, 25);
             this.MinusBox.TabIndex = 15;
             this.MinusBox.TabStop = false;
-            this.MinusBox.Visible = false;
             // 
             // PlusBox
             // 
@@ -488,7 +485,6 @@
             this.PlusBox.Size = new System.Drawing.Size(32, 29);
             this.PlusBox.TabIndex = 14;
             this.PlusBox.TabStop = false;
-            this.PlusBox.Visible = false;
             // 
             // MoodLabel
             // 

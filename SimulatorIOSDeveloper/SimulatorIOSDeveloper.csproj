@@ -157,6 +157,7 @@
     <Content Include="minus.png" />
     <Content Include="plus.png" />
     <Content Include="Resources\1434996991_41_itunes.png" />
+    <Content Include="Resources\money.wav" />
     <Content Include="Resources\symbol_add.png" />
     <None Include="Resources\1435166415_pen_stroke_sketch_doodle_lineart_88.png" />
     <None Include="Resources\1435166519_cycle.png" />

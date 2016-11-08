@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -19,6 +20,7 @@ namespace SimulatorIOSDeveloper
         public double Money;
         public String CurrentStatus;
         public List<Device> CurrentDevices;
+
         [XmlIgnore]
         public Random rnd = new Random();
         public Character()
@@ -28,15 +30,27 @@ namespace SimulatorIOSDeveloper
             this.Name = "John Doe";
             this.CurrentDevices = new List<Device>();
             this.AddDevice("iPhone", "4c", 2014);
-           // this.AddDevice("IPhone", "4c", 2015);
+            // this.AddDevice("IPhone", "4c", 2015);
             this.CharacterStats = new Stats();
         }
+        public void GetMoney(int value)
+        {
 
+            this.Money += value;
+            MakeMoneySound();
+        }
+        private void MakeMoneySound()
+        {
+            SoundPlayer player = new SoundPlayer();
+            player.SoundLocation = "..\\..\\Resources\\money.wav"; 
+            player.Play();
+        }
         public bool PayMoney(int value)
         {
             if (this.Money - value >= 0)
             {
                 this.Money -= value;
+                MakeMoneySound();
                 return true;
             }
             else
@@ -82,7 +96,7 @@ namespace SimulatorIOSDeveloper
                     MessageBox.Show("PornHub security spotted you making an extended adBlocker and decided to file suit against you. -50$");
                     skillGain = 3;
                     this.CharacterStats.DecreaseBy(Stats.StatsNames.Mood, 2);
-                    this.Money -= 50;
+                    this.PayMoney(50);
                     break;
                 case 4:
                     MessageBox.Show("Someone hacked 4chan again... Wasn`t it you?", "Nice one");
@@ -100,10 +114,11 @@ namespace SimulatorIOSDeveloper
                 default:
                     skillGain = rnd.Next(1, 3);
                     
-                    this.CharacterStats.DecreaseBy(Stats.StatsNames.Social, 1);
-                    MessageBox.Show(String.Format("Skill increased by {0}", skillGain.ToString()), "Nicely done");
+                    MessageBox.Show(String.Format("Skill increased by {0}\nSocial decreased by 1.", skillGain.ToString()), "Nicely done");
                     break;
             }
+            this.CharacterStats.DecreaseBy(Stats.StatsNames.Social, 1);
+
             this.CharacterStats.IncreaseBy(Stats.StatsNames.Programming, skillGain);
 
 
@@ -172,27 +187,27 @@ namespace SimulatorIOSDeveloper
        // to do stats gain or deacreases as flying pluses or minuses via pictureboxes
         public void ToDrinkSmoothie()
         {
-            int socialGain = rnd.Next(1, 3);
+            
             int healthGain = rnd.Next(1, 2);
-            int moodGain = rnd.Next(1, 2);
+            
 
             StringBuilder sb = new StringBuilder();
             bool enoughMoney = this.PayMoney(3);
             if (enoughMoney)
             {
                 this.CharacterStats.IncreaseBy(Stats.StatsNames.Health, healthGain);
-                this.CharacterStats.IncreaseBy(Stats.StatsNames.Mood, moodGain);
-                if (rnd.Next(1, 3) == 1) // one of three times
+                
+                if (rnd.Next(1, 3) == 1 && this.CharacterStats.SocialValue > 50) // one of three times & char is atleast 50 social
                 {
                     var dict = GenerateGenres();
                     int randomedGenre = rnd.Next(0, dict.Count);
-                    this.CharacterStats.IncreaseBy(Stats.StatsNames.Social, socialGain);
+                   
                     sb.AppendLine("You`ve met a cool hipster girl. ");
                     sb.AppendFormat("She told you about new music genre - {0}. {1} ", dict.ElementAt(randomedGenre).Key, dict.ElementAt(randomedGenre).Value);
-                    sb.AppendFormat("\nSocial skills increased by {0}.\n", socialGain);
+                    
                 }
                 sb.AppendFormat("Health increased by {0}.\n", healthGain);
-                sb.AppendFormat("Current Mood increased by {0}.", moodGain);
+                
                 MessageBox.Show(sb.ToString(), "Worth it!");
             }
             else MessageBox.Show("Not enough money.", "WTF?");

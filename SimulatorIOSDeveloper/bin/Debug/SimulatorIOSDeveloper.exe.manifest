@@ -50,7 +50,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zUFx3aiCuiH590R+YdyvLOL3Cn/aK6mWdl09DKZH7SQ=</dsig:DigestValue>
+        <dsig:DigestValue>cXlMBQrMuMUFhs86uhUHKoxSiQostBsclBEd+LibBcE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -124,6 +124,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>LTls9vQn0xUYmKFdy3B2+2UWsyebtZIwfyLMPbOQquc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Resources\money.wav" size="393770">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sZwcsPBtpmx4JhGu5YdFdUkD8GaiV97Y90p1f9I+1fU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Resources\plus.png" size="813">

@@ -4,6 +4,7 @@ using System.Diagnostics.Contracts;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using static SimulatorIOSDeveloper.Stats;
@@ -31,7 +32,7 @@ namespace SimulatorIOSDeveloper
             this.DeviceListBox.SelectedIndex = 0;
             InitQuotes();
             SetRandomQuote();
-            
+            Directory.CreateDirectory("..\\..\\Saves");
            
         }
         private void InitFromObj()
@@ -73,12 +74,12 @@ namespace SimulatorIOSDeveloper
                         if (this.HealthBar.Value < value)
                         {
                             this.PlusBox.Visible = true;
-                            this.PlusLabel.Text = "health";
+                            this.PlusLabel.Text = "Health";
                             TimerFadingPlus.Start();
                         }
                         else if (this.HealthBar.Value > value)
                         {
-                            this.MinusLabel.Text = "health";
+                            this.MinusLabel.Text = "Health";
                             this.MinusBox.Visible = true;
                             TimerFadingMinus.Start();
                         }
@@ -95,7 +96,7 @@ namespace SimulatorIOSDeveloper
                     {
                         if (this.MoodBar.Value < value)
                         {
-                            this.PlusLabel.Text = "mood";
+                            this.PlusLabel.Text = "Mood";
                             this.PlusBox.Visible = true;
                             TimerFadingPlus.Start();
 
@@ -103,7 +104,7 @@ namespace SimulatorIOSDeveloper
                         }
                         else if (this.MoodBar.Value > value)
                         {
-                            this.MinusLabel.Text = "mood";
+                            this.MinusLabel.Text = "Mood";
                             this.MinusBox.Visible = true;
                             TimerFadingMinus.Start();
 
@@ -120,13 +121,13 @@ namespace SimulatorIOSDeveloper
                         if (this.ProgrammingBar.Value < value)
                         {
                             this.PlusBox.Visible = true;
-                            this.PlusLabel.Text = "prog";
+                            this.PlusLabel.Text = "Programming";
                             TimerFadingPlus.Start();
                         }
                         else if (this.ProgrammingBar.Value > value)
                         {
                             this.MinusBox.Visible = true;
-                            this.MinusLabel.Text = "prog";
+                            this.MinusLabel.Text = "Programming";
                             TimerFadingMinus.Start();
 
                         }
@@ -139,7 +140,7 @@ namespace SimulatorIOSDeveloper
                     {
                         if (this.SocialBar.Value < value)
                         {
-                            this.PlusLabel.Text = "soc";
+                            this.PlusLabel.Text = "Social";
                             this.PlusBox.Visible = true;
                             TimerFadingPlus.Start();
 
@@ -147,7 +148,7 @@ namespace SimulatorIOSDeveloper
                         }
                         else if (this.SocialBar.Value > value)
                         {
-                            this.MinusLabel.Text = "soc";
+                            this.MinusLabel.Text = "Social";
                             this.MinusBox.Visible = true;
                             TimerFadingMinus.Start();
 
@@ -181,6 +182,7 @@ namespace SimulatorIOSDeveloper
         // to make some action on adding money (sound/image)
         public void UpdateMoney()
         {
+ 
             this.MoneyLabelSet.Text = obj.Money + "$";
 
         }
@@ -241,8 +243,6 @@ namespace SimulatorIOSDeveloper
             // to do
             this.obj.ToDrinkSmoothie();
             this.ChangeStat(StatsNames.Health, obj.CharacterStats.HealthValue);
-            this.ChangeStat(StatsNames.Social, obj.CharacterStats.SocialValue);
-            this.ChangeStat(StatsNames.Mood, obj.CharacterStats.MoodValue);
             this.UpdateMoney();
             this.UpdateCounter();
 
@@ -305,6 +305,7 @@ namespace SimulatorIOSDeveloper
         }
 
         // only works for black color
+        int opacity = 0;
         private void TimerFading_Tick(object sender, EventArgs e)
         {
             int fadingSpeed = 15;
@@ -317,22 +318,23 @@ namespace SimulatorIOSDeveloper
                 this.PlusLabel.Text = "";
             }
             
+
         }
         // to make a hptkey for this
         // to make a save button in settings form (onpress home)
         // works fine
-        private void SaveDataToFile() // without encryption // 
+        private void SaveDataToFile(string filename) // without encryption // 
         {
 
-            string filename = "savegame.sav";
+            string path = "..\\..\\Saves\\" + filename + ".sav";
 
             // Check to see whether the save exists.
-            if (System.IO.File.Exists(filename))
+            if (System.IO.File.Exists(path))
             {
                 // Delete it so that we can create one fresh.
-                File.Delete(filename);
+                File.Delete(path);
             }
-            using (Stream stream = File.Create(filename))
+            using (Stream stream = File.Create(path))
             {
                 
                 // Convert the object to XML data and put it in the stream.
@@ -363,22 +365,25 @@ namespace SimulatorIOSDeveloper
 
         private void MainControl_Click(object sender, EventArgs e)
         {
-            this.SaveDataToFile();
+            // to open settings form
+            SaveDataToFile("save1");
+            
         }
 
         private void LoadDataFromFile(string filename)// works fine
         {
-            
+
+            string path = "..\\..\\Saves\\" + filename + ".sav";
 
             // Check to see whether the save exists.
-            if (!File.Exists(filename))
+            if (!File.Exists(path))
             {
                 // if not - return;
                 MessageBox.Show("No Such file", "Error!");
                 
                 return;
             }
-            using (Stream stream = File.Open(filename, FileMode.Open))
+            using (Stream stream = File.Open(path, FileMode.Open))
             {
                 XmlSerializer serializer = new XmlSerializer(typeof(Character));
                 // TODO: TRYCATCH
