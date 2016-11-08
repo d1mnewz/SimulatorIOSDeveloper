@@ -64,6 +64,8 @@
             this.QuoteBox = new System.Windows.Forms.GroupBox();
             this.QuotePicture = new System.Windows.Forms.Panel();
             this.StatsBox = new System.Windows.Forms.GroupBox();
+            this.MinusLabel = new System.Windows.Forms.Label();
+            this.PlusLabel = new System.Windows.Forms.Label();
             this.MinusBox = new System.Windows.Forms.PictureBox();
             this.PlusBox = new System.Windows.Forms.PictureBox();
             this.MoodLabel = new System.Windows.Forms.Label();
@@ -78,8 +80,6 @@
             this.TimerFadingPlus = new System.Windows.Forms.Timer(this.components);
             this.AppleLogoBox = new System.Windows.Forms.Panel();
             this.MainControl = new System.Windows.Forms.Panel();
-            this.PlusLabel = new System.Windows.Forms.Label();
-            this.MinusLabel = new System.Windows.Forms.Label();
             this.TimerFadingMinus = new System.Windows.Forms.Timer(this.components);
             this.StatusGBox.SuspendLayout();
             this.DevicesBox.SuspendLayout();
@@ -449,6 +449,26 @@
             this.StatsBox.TabStop = false;
             this.StatsBox.Text = "Stats";
             // 
+            // MinusLabel
+            // 
+            this.MinusLabel.AutoSize = true;
+            this.MinusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinusLabel.Location = new System.Drawing.Point(84, 152);
+            this.MinusLabel.Name = "MinusLabel";
+            this.MinusLabel.Size = new System.Drawing.Size(56, 16);
+            this.MinusLabel.TabIndex = 17;
+            this.MinusLabel.Text = "______";
+            // 
+            // PlusLabel
+            // 
+            this.PlusLabel.AutoSize = true;
+            this.PlusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlusLabel.Location = new System.Drawing.Point(84, 127);
+            this.PlusLabel.Name = "PlusLabel";
+            this.PlusLabel.Size = new System.Drawing.Size(40, 16);
+            this.PlusLabel.TabIndex = 16;
+            this.PlusLabel.Text = "____";
+            // 
             // MinusBox
             // 
             this.MinusBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -469,7 +489,6 @@
             this.PlusBox.TabIndex = 14;
             this.PlusBox.TabStop = false;
             this.PlusBox.Visible = false;
-            
             // 
             // MoodLabel
             // 
@@ -565,26 +584,8 @@
             this.MainControl.Name = "MainControl";
             this.MainControl.Size = new System.Drawing.Size(72, 69);
             this.MainControl.TabIndex = 1;
-            // 
-            // PlusLabel
-            // 
-            this.PlusLabel.AutoSize = true;
-            this.PlusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlusLabel.Location = new System.Drawing.Point(84, 127);
-            this.PlusLabel.Name = "PlusLabel";
-            this.PlusLabel.Size = new System.Drawing.Size(40, 16);
-            this.PlusLabel.TabIndex = 16;
-            this.PlusLabel.Text = "____";
-            // 
-            // MinusLabel
-            // 
-            this.MinusLabel.AutoSize = true;
-            this.MinusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinusLabel.Location = new System.Drawing.Point(84, 152);
-            this.MinusLabel.Name = "MinusLabel";
-            this.MinusLabel.Size = new System.Drawing.Size(56, 16);
-            this.MinusLabel.TabIndex = 17;
-            this.MinusLabel.Text = "______";
+            this.MainControl.Click += new System.EventHandler(this.MainControl_Click);
+            this.MainControl.Paint += new System.Windows.Forms.PaintEventHandler(this.MainControl_Paint);
             // 
             // TimerFadingMinus
             // 

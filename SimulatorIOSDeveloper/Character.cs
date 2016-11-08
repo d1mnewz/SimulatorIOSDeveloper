@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace SimulatorIOSDeveloper
 {
@@ -18,6 +19,7 @@ namespace SimulatorIOSDeveloper
         public double Money;
         public String CurrentStatus;
         public List<Device> CurrentDevices;
+        [XmlIgnore]
         public Random rnd = new Random();
         public Character()
         {

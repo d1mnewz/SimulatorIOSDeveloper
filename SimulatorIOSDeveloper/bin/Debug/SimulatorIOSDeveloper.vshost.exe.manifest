@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulatorIOSDeveloper.exe" size="382416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SimulatorIOSDeveloper.exe" size="382928">
       <assemblyIdentity name="SimulatorIOSDeveloper" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Bkec7vGczzUABR8179/Icks+cUA9+YP7Nt59JboMYCY=</dsig:DigestValue>
+        <dsig:DigestValue>YfUNYRiT4qyEfvLlZlsTlXEkCVQudWmQ/vYTj+8CeNs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

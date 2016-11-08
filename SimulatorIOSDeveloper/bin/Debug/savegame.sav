@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<Character xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>John Doe</Name>
+  <CharacterStats>
+    <SocialValue>50</SocialValue>
+    <HealthValue>90</HealthValue>
+    <ProgrammingValue>100</ProgrammingValue>
+    <MoodValue>80</MoodValue>
+  </CharacterStats>
+  <Money>10</Money>
+  <CurrentStatus>ididot retard</CurrentStatus>
+  <CurrentDevices>
+    <Device>
+      <Name>iPhone</Name>
+      <Model>4c</Model>
+      <Year>2014</Year>
+    </Device>
+  </CurrentDevices>
+</Character>

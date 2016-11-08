@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using static SimulatorIOSDeveloper.Stats;
 
 namespace SimulatorIOSDeveloper
@@ -25,14 +27,14 @@ namespace SimulatorIOSDeveloper
         public MainForm()
         {
             InitializeComponent();
-            InitFromObj(obj);
+            InitFromObj();
             this.DeviceListBox.SelectedIndex = 0;
             InitQuotes();
             SetRandomQuote();
             
            
         }
-        private void InitFromObj(Character obj)
+        private void InitFromObj()
         {
             this.MoneyLabelSet.Text = this.obj.Money + "$";
             this.StatusLabelSet.Text = this.obj.CurrentStatus;
@@ -283,7 +285,7 @@ namespace SimulatorIOSDeveloper
         private void BikePanel_Click(object sender, EventArgs e)
         {
             this.UpdateCounter();
-
+            
             // to do mini game with graphics?
         }
 
@@ -316,7 +318,31 @@ namespace SimulatorIOSDeveloper
             }
             
         }
+        // to make a hptkey for this
+        // to make a save button in settings form (onpress home)
+        // works fine
+        private void SaveDataToFile() // without encryption // 
+        {
 
+            string filename = "savegame.sav";
+
+            // Check to see whether the save exists.
+            if (System.IO.File.Exists(filename))
+            {
+                // Delete it so that we can create one fresh.
+                File.Delete(filename);
+            }
+            using (Stream stream = File.Create(filename))
+            {
+                
+                // Convert the object to XML data and put it in the stream.
+                XmlSerializer serializer = new XmlSerializer(typeof(Character));
+                serializer.Serialize(stream, this.obj);
+               
+
+            }
+
+        }
         private void TimerFadingMinus_Tick(object sender, EventArgs e)
         {
             int fadingSpeed = 15;
@@ -330,6 +356,38 @@ namespace SimulatorIOSDeveloper
             }
         }
 
+        private void MainControl_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void MainControl_Click(object sender, EventArgs e)
+        {
+            this.SaveDataToFile();
+        }
+
+        private void LoadDataFromFile(string filename)// works fine
+        {
+            
+
+            // Check to see whether the save exists.
+            if (!File.Exists(filename))
+            {
+                // if not - return;
+                MessageBox.Show("No Such file", "Error!");
+                
+                return;
+            }
+            using (Stream stream = File.Open(filename, FileMode.Open))
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(Character));
+                // TODO: TRYCATCH
+                this.obj = (Character)serializer.Deserialize(stream);
+
+            }
+            InitFromObj();
+            
+        }
         // onlick create textbox where you enter your name;
         // enter - confirm & close text box
         // esc - cancel & leave the name as it was before
